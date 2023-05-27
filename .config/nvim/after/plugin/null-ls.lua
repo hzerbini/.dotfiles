@@ -1,0 +1,34 @@
+local null_ls = require("null-ls")
+
+null_ls.setup()
+-- null_ls.setup({
+--     sources = {
+--         -- linters
+--         null_ls.builtins.diagnostics.buf,
+--         null_ls.builtins.diagnostics.checkmake,
+--         null_ls.builtins.diagnostics.clang_check,
+--         null_ls.builtins.diagnostics.dotenv_linter,
+--         null_ls.builtins.diagnostics.editorconfig_checker,
+--         null_ls.builtins.diagnostics.eslint_d,
+--         null_ls.builtins.diagnostics.luacheck,
+--         null_ls.builtins.diagnostics.markdownlint,
+--         null_ls.builtins.diagnostics.markuplint,
+--         null_ls.builtins.diagnostics.phpcs,
+--         null_ls.builtins.diagnostics.protolint,
+--         null_ls.builtins.diagnostics.stylelint,
+--         -- formatters
+--         null_ls.builtins.formatting.beautysh,
+--         null_ls.builtins.formatting.blade_formatter,
+--         null_ls.builtins.formatting.buf,
+--         null_ls.builtins.formatting.eslint_d,
+--         null_ls.builtins.formatting.gofmt,
+--         null_ls.builtins.formatting.lua_format,
+--         null_ls.builtins.formatting.nginx_beautifier,
+--         null_ls.builtins.formatting.phpcsfixer,
+--         null_ls.builtins.formatting.prettierd,
+--         null_ls.builtins.formatting.rustfmt,
+--         null_ls.builtins.formatting.rustywind,
+--         null_ls.builtins.formatting.stylelint,
+--         null_ls.builtins.formatting.rustywind,
+--     },
+-- })
