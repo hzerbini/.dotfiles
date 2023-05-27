@@ -137,4 +137,4 @@ zinit light zsh-users/zsh-completions
 alias luamake=/luamake
 PATH="$HOME/.local/bin:$PATH"
 
-alias config='/usr/bin/git --git-dir=/home/zerbini/.cfg/ --work-tree=/home/zerbini'
+alias config='/usr/bin/git --git-dir=/home/zerbini/.dotfiles/ --work-tree=/home/zerbini'
