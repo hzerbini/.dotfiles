@@ -138,3 +138,5 @@ alias luamake=/luamake
 PATH="$HOME/.local/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=/home/zerbini/.dotfiles/ --work-tree=/home/zerbini'
+
+export EDITOR='nvim'
