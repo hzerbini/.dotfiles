@@ -16,6 +16,10 @@ return require('packer').startup(function(use)
     use('nvim-telescope/telescope-file-browser.nvim')
 
     use 'shaunsingh/nord.nvim'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
     use('nvim-treesitter/playground')
