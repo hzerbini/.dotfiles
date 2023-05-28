@@ -1,7 +1,7 @@
 local dap = require('dap')
 local dapui = require('dapui')
 local dap_virtual_text = require('nvim-dap-virtual-text')
-local colors = require("dracula").colors()
+-- local theme = require("nord")
 
 dap.adapters.php = {
     type = 'executable',
@@ -65,7 +65,7 @@ end
 --
 -- Highlight Color
 --
-vim.api.nvim_set_hl(0, 'debugPC', { bg = colors.selection }) -- Color of Debug Current Line
+vim.api.nvim_set_hl(0, 'debugPC', { bg = 000000  }) -- Color of Debug Current Line
 
 --
 -- Keymaps
