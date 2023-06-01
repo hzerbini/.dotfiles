@@ -3,7 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -71,7 +71,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git laravel node docker tmux)
-plugins=(git laravel node docker)
+plugins=(git laravel node docker tmux)
 
 source $ZSH/oh-my-zsh.sh
 
