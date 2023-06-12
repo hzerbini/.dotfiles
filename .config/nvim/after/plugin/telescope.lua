@@ -20,6 +20,7 @@ telescope.setup {
 
 telescope.load_extension "file_browser"
 telescope.load_extension('dap')
+telescope.load_extension('git_worktree')
 
 vim.keymap.set('n', '<leader>ps', function()
 	builtin.grep_string({ search = vim.fn.input("Grep > ") })
@@ -30,5 +31,7 @@ vim.keymap.set('n','<leader>fe',':Telescope file_browser path=%:p:h select_buffe
 vim.keymap.set('n','<leader>ff', "<cmd>Telescope find_files hidden=true<cr>", {})
 vim.keymap.set('n','<leader>fg', "<cmd>Telescope live_grep<cr>", {})
 vim.keymap.set('n','<leader>fh', "<cmd>Telescope help_tags<cr>", {})
+vim.keymap.set('n','<leader>fw', "<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", {})
+vim.keymap.set('n','<leader>f%', "<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", {})
 vim.keymap.set('n','<leader>fk', "<cmd>Telescope keymaps<cr>", {})
 

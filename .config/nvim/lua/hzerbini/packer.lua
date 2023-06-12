@@ -14,6 +14,7 @@ return require('packer').startup(function(use)
     }
 
     use('nvim-telescope/telescope-file-browser.nvim')
+    use('ThePrimeagen/git-worktree.nvim')
 
     use 'shaunsingh/nord.nvim'
     use {
@@ -28,9 +29,13 @@ return require('packer').startup(function(use)
     use('mbbill/undotree')
     use('tpope/vim-fugitive')
 
+    use('Wansmer/treesj')
+
     use('tpope/vim-commentary')
     use('kylechui/nvim-surround')
     use('github/copilot.vim')
+
+    use("folke/trouble.nvim")
 
     use {
         'VonHeikemen/lsp-zero.nvim',
