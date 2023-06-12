@@ -31,7 +31,7 @@
     foreground:  @nord9;
     backlight:   #ccffeedd;
     background-color:  transparent;
-    
+
     highlight:     underline bold #eceff4;
 
     transparent: rgba(46,52,64,0);
@@ -43,7 +43,7 @@ window {
     transparency: "screenshot";
     padding: 10px;
     border:  0px;
-    border-radius: 6px;
+    border-radius: 0px;
 
     background-color: @transparent;
     spacing: 0;
@@ -70,8 +70,8 @@ inputbar {
     background-color: #3b4252;
 
     border: 1px;
-    border-radius:  6px 6px 0px 0px;
-    border-color: @nord10;
+    border-radius:  1px 1px 0px 0px;
+    border-color: @nord1;
 }
 
 entry, prompt, case-indicator {
@@ -86,7 +86,7 @@ prompt {
 listview {
     padding: 8px;
     border-radius: 0px 0px 6px 6px;
-    border-color: @nord10;
+    border-color: @nord1;
     border: 0px 1px 1px 1px;
     background-color: rgba(46,52,64,0.9);
     dynamic: false;
@@ -95,7 +95,7 @@ listview {
 element {
     padding: 3px;
     vertical-align: 0.5;
-    border-radius: 4px;
+    border-radius: 1px;
     background-color: transparent;
     color: @foreground;
     text-color: rgb(216, 222, 233);
@@ -112,12 +112,12 @@ element-text, element-icon {
 }
 
 button {
-    padding: 6px;
+    padding: 0px;
     color: @foreground;
     horizontal-align: 0.5;
 
     border: 2px 0px 2px 2px;
-    border-radius: 4px 0px 0px 4px;
+    border-radius: 1px 0px 0px 1px;
     border-color: @foreground;
 }
 

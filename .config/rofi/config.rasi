@@ -1,5 +1,5 @@
 configuration {
-    /*	modes: "window,drun,run,ssh";*/
+    modes: "window,drun,run,filebrowser,windowcd,calc,emoji";
     /*	font: "mono 12";*/
     /*	location: 0;*/
     /*	yoffset: 0;*/
@@ -167,8 +167,8 @@ configuration {
 @theme "~/.config/rofi/nord.rasi"
 
 listview {
-	lines: 6;
-	columns: 2;
+	lines: 8;
+	columns: 1;
 }
 
 window {
