@@ -1,21 +1,22 @@
 #!/bin/zsh
 
-zoxide_result=`zoxide query -l | fzf`
+zoxide_result=`zoxide query -l`
+result=`echo "$zoxide_result\n/home/$USER"| sort | fzf`
 
-if [ -z "$zoxide_result" ]; then
+if [ -z "$result" ]; then
     exit 0;
 fi
 
 session_list=`tmux list-sessions -F "#S #{session_path}"`
-desired_session=`echo $session_list | grep -E "(^| )$zoxide_result( |$)"`
+desired_session=`echo $session_list | grep -E "(^| )$result( |$)"`
 
 if [ -z $desired_session ]; then
-    session_name=$(basename $zoxide_result)
+    session_name=$(basename $result)
 
     if [ -z $TMUX ]; then # Not in TMUX
-        tmux new-session -c $zoxide_result -s $session_name
+        tmux new-session -c $result -s $session_name
     else
-        tmux new-session -d -c $zoxide_result -s $session_name
+        tmux new-session -d -c $result -s $session_name
         tmux switch-client -t $session_name
     fi
 else
