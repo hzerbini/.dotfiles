@@ -1,0 +1,14 @@
+#!/bin/zsh
+
+pass_list=`pass keepassxc | keepassxc-cli ls -R $HOME/Dropbox/Passwords.kdbx | sed '/\/$/d' | sed -e 's/^[ \t]*//'`
+
+if [ -z "$pass_list" ]; then
+    exit 0;
+fi
+
+choice=`echo $pass_list | fzf`
+
+mode=`echo 'UserName\nURL' | fzf`
+
+(pass keepassxc | keepassxc-cli show $HOME/Dropbox/Passwords.kdbx $choice | grep $mode | awk '{print $2}' | xclip -selection clipboard) &
+
