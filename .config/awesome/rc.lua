@@ -375,7 +375,11 @@ globalkeys = gears.table.join(
     awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "s", function() awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/ff") end,
-        { description = "open a terminal", group = "launcher" }),
+        { description = "open tmux session creator", group = "launcher" }),
+    awful.key({ modkey }, "p", function() awful.spawn.with_shell(terminal .. " --class password-fzf -e /home/zerbini/Scripts/fzf-pass") end,
+        { description = "open password fzf", group = "launcher" }),
+    awful.key({ modkey, "Shift" }, "p", function() awful.spawn.with_shell(terminal .. " --class password-fzf -e /home/zerbini/Scripts/fzf-pass-info") end,
+        { description = "open password info fzf", group = "launcher" }),
     awful.key({ modkey, "Control" }, "r", awesome.restart,
         { description = "reload awesome", group = "awesome" }),
     awful.key({ modkey, "Shift" }, "q", awesome.quit,
@@ -397,7 +401,7 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift" }, "space", function() awful.layout.inc(-1) end,
         { description = "select previous", group = "layout" }),
 
-    awful.key({ modkey, "Control" }, "n",
+    awful.key({ modkey, "Shift" }, "n",
         function()
             local c = awful.client.restore()
             -- Focus restored client
@@ -561,6 +565,13 @@ clientkeys = gears.table.join(
             c.minimized = true
         end,
         { description = "minimize", group = "client" }),
+    awful.key({ modkey, "Control" }, "n",
+        function()
+            for _, c in ipairs(awful.screen.focused({client = true, mouse = false}).selected_tag:clients()) do
+                c.minimized = false
+            end
+        end,
+        { description = "unminimize all clients in the current tag", group = "client" }),
     awful.key({ modkey, }, "m",
         function(c)
             c.maximized = not c.maximized
@@ -568,17 +579,25 @@ clientkeys = gears.table.join(
         end,
         { description = "(un)maximize", group = "client" }),
     awful.key({ modkey, "Control" }, "m",
-        function(c)
-            c.maximized_vertical = not c.maximized_vertical
-            c:raise()
+        function()
+            for _, c in ipairs(awful.screen.focused({client = true, mouse = false}).selected_tag:clients()) do
+                c.maximized = false
+                c.fullscreen = false
+            end
         end,
-        { description = "(un)maximize vertically", group = "client" }),
-    awful.key({ modkey, "Shift" }, "m",
-        function(c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c:raise()
-        end,
-        { description = "(un)maximize horizontally", group = "client" }),
+        { description = "unmaximize all clients in the current tag", group = "client" }),
+    -- awful.key({ modkey, "Control" }, "m",
+    --     function(c)
+    --         c.maximized_vertical = not c.maximized_vertical
+    --         c:raise()
+    --     end,
+    --     { description = "(un)maximize vertically", group = "client" }),
+    -- awful.key({ modkey, "Shift" }, "m",
+    --     function(c)
+    --         c.maximized_horizontal = not c.maximized_horizontal
+    --         c:raise()
+    --     end,
+    --     { description = "(un)maximize horizontally", group = "client" }),
     awful.key({ modkey, "Ctrl" }, "Up",
         function(c)
             if(c.floating) then
@@ -746,7 +765,7 @@ awful.rules.rules = {
 
     -- Enables mixer to always be centered and floating
     {
-        rule_any = { instance = { "mixer", "htop" }, class = { "Nitrogen" } },
+        rule_any = { instance = { "mixer", "htop", "password-fzf" }, class = { "Nitrogen" } },
         properties = { placement = awful.placement.centered, floating = true }
     },
 
@@ -884,5 +903,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart
 awful.spawn.with_shell("picom")
+awful.spawn.with_shell("aw-qt")
 awful.spawn.with_shell("nitrogen --restore")
 awful.spawn.with_shell("conky")
