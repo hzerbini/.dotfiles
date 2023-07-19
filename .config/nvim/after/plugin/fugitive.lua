@@ -1,4 +1,5 @@
 vim.keymap.set("n", "<leader>gs", "<cmd>Git<cr>")
+vim.keymap.set("n", "<leader>gl", "<cmd>Git log<cr>")
 
 local ThePrimeagen_Fugitive = vim.api.nvim_create_augroup("ThePrimeagen_Fugitive", {})
 
