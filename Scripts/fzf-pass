@@ -8,4 +8,4 @@ fi
 
 choice=`echo $pass_list | fzf`
 
-pass keepassxc | keepassxc-cli clip $HOME/Dropbox/Passwords.kdbx $choice &> /dev/null &
+pass keepassxc | keepassxc-cli clip -q $HOME/Dropbox/Passwords.kdbx $choice
