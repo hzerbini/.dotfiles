@@ -450,7 +450,7 @@ globalkeys = gears.table.join(
                     elseif key == "k" then awful.spawn.raise_or_spawn("keepassxc")
                     elseif key == "m" then awful.spawn.raise_or_spawn("studio-3t")
                     elseif key == "o" then awful.spawn.raise_or_spawn("obsidian")
-                    elseif key == "s" then awful.spawn.raise_or_spawn(terminal .. " --class spotify -e spt")
+                    elseif key == "s" then awful.spawn.raise_or_spawn("spotify")
                     end
 
                     selected = true
