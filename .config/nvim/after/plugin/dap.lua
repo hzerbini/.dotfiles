@@ -5,8 +5,8 @@ local dap_virtual_text = require('nvim-dap-virtual-text')
 
 dap.adapters.php = {
     type = 'executable',
-    command = 'node',
-    args = { vim.fn.stdpath("data") .. '/mason/bin/php-debug-adapter' }
+    command = vim.fn.stdpath("data") .. '/mason/bin/php-debug-adapter',
+    -- args = { vim.fn.stdpath("data") .. '/mason/bin/php-debug-adapter' }
 }
 
 -- dap.adapters.codelldb = require("rust-tools.dap").get_codelldb_adapter(
@@ -28,7 +28,16 @@ dap.configurations.php = {
         type = 'php',
         request = 'launch',
         name = 'Listen for Xdebug',
-        port = 9000
+        port = 9003,
+        log = true,
+        pathMappings = {
+            ['/var/www/html'] = "${workspaceFolder}"
+        },
+        -- localSourceRoot = function()
+        --     return vim.fn.getcwd()
+        -- end,
+        -- localSourceRoot = '/home/zerbini/Documents/Trabalho/ProjetosParalelos/evolua-com-a-yahp.git/homologacao/',
+        -- serverSourceRoot = '/var/www/html/',
     }
 }
 
@@ -77,6 +86,6 @@ vim.keymap.set("n", "<leader>Dj", ":lua require('dap').step_over()<CR>")
 vim.keymap.set("n", "<leader>Db", ":lua require('dap').toggle_breakpoint()<CR>")
 vim.keymap.set("n", "<leader>DB", ":lua require('dap').set_breakpoint(vim.fn.input('condition: '))<CR>")
 vim.keymap.set("n", "<leader>Dlp", ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
-vim.keymap.set("n", "<leader>Dr", ":lua require('dap').repl.open()<CR>")
+vim.keymap.set("n", "<leader>Dr", ":lua require('dap').repl.toggle()<CR>")
 vim.keymap.set("n", "<leader>Du", ":lua require('dapui').toggle()<CR>")
 

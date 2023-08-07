@@ -22,7 +22,6 @@ return require('packer').startup(function(use)
     use 'shaunsingh/nord.nvim'
     use {
         'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
     }
 
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
@@ -38,7 +37,9 @@ return require('packer').startup(function(use)
     use('kylechui/nvim-surround')
     use('github/copilot.vim')
 
-    use("folke/trouble.nvim")
+    use {
+        "folke/trouble.nvim"
+    }
 
     use {
         'VonHeikemen/lsp-zero.nvim',
@@ -72,6 +73,9 @@ return require('packer').startup(function(use)
 
     use("folke/zen-mode.nvim")
     use("eandrju/cellular-automaton.nvim")
+
+    -- Web icons
+    use('nvim-tree/nvim-web-devicons')
 
 end)
 
