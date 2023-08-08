@@ -7,6 +7,7 @@ lsp.ensure_installed({
   'lua_ls',
   'rust_analyzer',
   'emmet_ls',
+  'intelephense',
 })
 
 -- Fix Undefined global 'vim'
@@ -16,6 +17,32 @@ lsp.configure('lua_ls', {
             diagnostics = {
                 globals = { 'vim' }
             }
+        }
+    }
+})
+
+lsp.configure('intelephense', {
+    settings = {
+        intelephense = {
+            stubs = {
+                    "bcmath",
+                    "bz2",
+                    "calendar",
+                    "Core",
+                    "curl",
+                    "zip",
+                    "zlib",
+                    "wordpress",
+                    "woocommerce",
+                    "acf-pro",
+                    "wordpress-globals",
+                    "wp-cli",
+                    "genesis",
+                    "polylang"
+            },
+            environment = {
+                  includePaths = '/home/zerbini/.config/composer/vendor/php-stubs' -- this line forces the composer path for the stubs in case inteliphense don't find it...
+            },
         }
     }
 })

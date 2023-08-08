@@ -13,6 +13,8 @@ return require('packer').startup(function(use)
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
+    use('tpope/vim-unimpaired')
+
     -- Telemetry
     use('ActivityWatch/aw-watcher-vim')
 
