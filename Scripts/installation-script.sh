@@ -9,7 +9,6 @@ sudo pacman -S neovim \
     ripgrep \
     httpie \
     libreoffice-still \
-    spotifyd \
     docker \
     docker-compose \
     kubectl \
@@ -56,7 +55,6 @@ cd $HOME
 paru -S beekeeper-studio \
     brave-bin \
     vial-appimage \
-    dropbox \
     activitywatch \
     spotify \
     mongosh-bin \
