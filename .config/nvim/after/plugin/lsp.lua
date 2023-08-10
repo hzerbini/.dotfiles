@@ -4,6 +4,7 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'tsserver',
+  'gopls',
   'lua_ls',
   'rust_analyzer',
   'emmet_ls',

@@ -65,6 +65,12 @@ return require('packer').startup(function(use)
         }
     }
 
+    -- Test Configuration
+    use('nvim-neotest/neotest')
+    use('nvim-neotest/neotest-go')
+    use('nvim-neotest/neotest-plenary')
+    use('olimorris/neotest-phpunit')
+
     -- LInter and Formatter
     use('jose-elias-alvarez/null-ls.nvim')
 
@@ -72,6 +78,9 @@ return require('packer').startup(function(use)
     use('rcarriga/nvim-dap-ui')
     use('theHamsta/nvim-dap-virtual-text')
     use('nvim-telescope/telescope-dap.nvim')
+
+    -- Blade
+    use('jwalton512/vim-blade')
 
     use("folke/zen-mode.nvim")
     use("eandrju/cellular-automaton.nvim")

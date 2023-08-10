@@ -31,13 +31,8 @@ dap.configurations.php = {
         port = 9003,
         log = true,
         pathMappings = {
-            ['/var/www/html'] = "${workspaceFolder}"
+            ['/var/www'] = "${workspaceFolder}"
         },
-        -- localSourceRoot = function()
-        --     return vim.fn.getcwd()
-        -- end,
-        -- localSourceRoot = '/home/zerbini/Documents/Trabalho/ProjetosParalelos/evolua-com-a-yahp.git/homologacao/',
-        -- serverSourceRoot = '/var/www/html/',
     }
 }
 
