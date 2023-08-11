@@ -73,6 +73,7 @@ sudo mv ./kind /usr/local/bin/kind
 # Setup Docker
 sudo groupadd docker
 sudo usermod -aG docker $USER
+sudo systemctl enable docker.service
 
 # Setup tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
