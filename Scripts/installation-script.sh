@@ -54,6 +54,7 @@ cd $HOME
 # Install AUR Packages
 paru -S beekeeper-studio \
     brave-bin \
+    nvim-packer-git \
     vial-appimage \
     activitywatch \
     spotify \
@@ -80,6 +81,10 @@ export USER_GID=`id -g`; sudo --preserve-env=USER_GID sh -c 'echo "KERNEL==\"hid
 
 #Set right keyboard layout
 localectl set-x11-keymap us pc104 intl
+
+# Config GIT
+git config --global user.email "henriquezjassis@gmail.com"
+git config --global user.name "Henrique Zerbini Junqueira de Assis"
 
 #Change Shell
 chsh -s $(which zsh)
