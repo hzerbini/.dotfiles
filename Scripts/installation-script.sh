@@ -36,6 +36,7 @@ sudo pacman -S neovim \
     acpi \
     gimp \
     noto-fonts-emoji \
+    go \
     conky \
     zoxide \
     brightnessctl \
