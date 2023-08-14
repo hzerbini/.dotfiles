@@ -3,6 +3,7 @@
 # Install pacman Dependencies
 sudo pacman -S --needed base-devel
 sudo pacman -S neovim \
+    nextcloud-client \
     obsidian \
     discord \
     npm \
