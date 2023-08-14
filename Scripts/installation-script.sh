@@ -53,15 +53,16 @@ cd $HOME
 
 
 # Install AUR Packages
-paru -S beekeeper-studio \
+paru -S activitywatch \
+    beekeeper-studio \
     brave-bin \
-    nvim-packer-git \
-    tmux-plugin-manager \
-    vial-appimage \
-    activitywatch \
-    spotify \
     mongosh-bin \
-    studio-3t
+    nvim-packer-git \
+    pcloud-drive \
+    spotify \
+    studio-3t \
+    tmux-plugin-manager \
+    vial-appimage
 
 # Install Kind (Kubernets in Docker)
 # For AMD64 / x86_64
