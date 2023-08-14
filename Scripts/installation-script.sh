@@ -56,6 +56,7 @@ cd $HOME
 paru -S beekeeper-studio \
     brave-bin \
     nvim-packer-git \
+    tmux-plugin-manager \
     vial-appimage \
     activitywatch \
     spotify \
