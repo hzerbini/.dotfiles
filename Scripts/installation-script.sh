@@ -18,6 +18,7 @@ sudo pacman -S neovim \
     zathura-pdf-mupdf \
     nerd-fonts \
     ttf-jetbrains-mono-nerd \
+    unzip \
     zsh \
     tmux \
     xclip \
