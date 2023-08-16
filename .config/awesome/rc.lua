@@ -793,7 +793,7 @@ awful.rules.rules = {
     },
     {
         rule_any = {
-            class = { "thunderbird", "discord" }
+            class = { "thunderbird", "discord", "ClickUp" }
         },
         properties = { tag = "5", focus = true, switchtotag = true },
     },
