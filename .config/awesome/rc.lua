@@ -903,9 +903,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 -- Autostart
-awful.spawn.with_shell("picom")
-awful.spawn.with_shell("aw-qt")
+awful.spawn.with_shell("~/.config/awesome/autorun.sh")
 awful.spawn.with_shell("nitrogen --restore")
-awful.spawn.with_shell("conky")
-awful.spawn.with_shell("conky")
-awful.spawn.once("pcloud")
