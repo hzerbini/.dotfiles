@@ -445,6 +445,7 @@ globalkeys = gears.table.join(
                     elseif key == "c" then awful.spawn.raise_or_spawn("discord")
                     elseif key == "d" then awful.spawn.raise_or_spawn("beekeeper-studio")
                     elseif key == "e" then awful.spawn.raise_or_spawn("thunderbird")
+                    elseif key == "t" then awful.spawn.raise_or_spawn("clickup")
                     elseif key == "h" then awful.spawn.spawn(terminal .." --class htop -e htop")
                     elseif key == "i" then awful.spawn.raise_or_spawn("gimp-2.10")
                     elseif key == "k" then awful.spawn.raise_or_spawn("keepassxc")

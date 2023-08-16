@@ -58,6 +58,7 @@ cd $HOME
 paru -S activitywatch \
     beekeeper-studio \
     brave-bin \
+    clickup \
     mongosh-bin \
     nvim-packer-git \
     pcloud-drive \
