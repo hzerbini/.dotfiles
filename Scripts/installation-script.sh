@@ -2,50 +2,51 @@
 
 # Install pacman Dependencies
 sudo pacman -S --needed base-devel
-sudo pacman -S neovim \
-    nextcloud-client \
-    obsidian \
+sudo pacman -S acpi \
+    bluez \
+    bluez-utils \
+    brightnessctl \
+    composer \
+    conky \
     discord \
-    npm \
-    ripgrep \
-    httpie \
-    libreoffice-still \
     docker \
     docker-compose \
+    flameshot \
+    fzf \
+    gimp \
+    go \
+    httpie \
+    keepassxc \
     kubectl \
-    youtube-dl \
-    zathura \
-    zathura-pdf-mupdf \
+    libreoffice-still \
+    neovim \
     nerd-fonts \
-    ttf-jetbrains-mono-nerd \
-    unzip \
-    zsh \
-    tmux \
-    xclip \
+    nextcloud-client \
     nitrogen \
+    noto-fonts-emoji \
+    npm \
+    obsidian \
+    openvpn \
+    pass \
+    picom \
+    playerctl \
+    pulsemixer \
+    ripgrep \
     rofi \
     rofi-calc \
     rofi-emoji \
-    picom \
-    xdotool \
-    tldr \
     thunderbird \
-    bluez \
-    bluez-utils \
-    openvpn \
-    pulsemixer \
-    flameshot \
-    acpi \
-    gimp \
-    noto-fonts-emoji \
-    go \
-    conky \
+    tldr \
+    tmux \
+    ttf-jetbrains-mono-nerd \
+    unzip \
+    xclip \
+    xdotool \
+    youtube-dl \
+    zathura \
+    zathura-pdf-mupdf \
     zoxide \
-    brightnessctl \
-    playerctl \
-    pass \
-    keepassxc \
-    fzf
+    zsh
 
 # Install Paru (AUR Helper)
 git clone https://aur.archlinux.org/paru.git $HOME/.paru
