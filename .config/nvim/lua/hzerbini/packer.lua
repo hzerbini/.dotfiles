@@ -79,9 +79,6 @@ return require('packer').startup(function(use)
     use('theHamsta/nvim-dap-virtual-text')
     use('nvim-telescope/telescope-dap.nvim')
 
-    -- Blade
-    use('jwalton512/vim-blade')
-
     use("folke/zen-mode.nvim")
     use("eandrju/cellular-automaton.nvim")
 
