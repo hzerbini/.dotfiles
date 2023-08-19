@@ -25,6 +25,7 @@ sudo pacman -S acpi \
     nitrogen \
     noto-fonts-emoji \
     npm \
+    obs-studio \
     obsidian \
     openvpn \
     pass \
@@ -40,6 +41,7 @@ sudo pacman -S acpi \
     tmux \
     ttf-jetbrains-mono-nerd \
     unzip \
+    vlc \
     xclip \
     xdotool \
     youtube-dl \
