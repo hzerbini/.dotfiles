@@ -374,8 +374,12 @@ globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey, }, "Return", function() awful.spawn(terminal) end,
         { description = "open a terminal", group = "launcher" }),
-    awful.key({ modkey, "Shift" }, "s", function() awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/ff") end,
+    awful.key({ modkey, "Control" }, "s", function() awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/ff.sh") end,
+        { description = "open tmux session creator (saved ones)", group = "launcher" }),
+    awful.key({ modkey, "Shift" }, "s", function() awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/fo.sh") end,
         { description = "open tmux session creator", group = "launcher" }),
+    awful.key({ modkey, "Shift" }, "a", function() awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/fa.sh") end,
+        { description = "put a folder with fzf in ff.sh list", group = "launcher" }),
     awful.key({ modkey }, "p", function() awful.spawn.with_shell(terminal .. " --class password-fzf -e /home/zerbini/Scripts/fzf-pass") end,
         { description = "open password fzf", group = "launcher" }),
     awful.key({ modkey, "Shift" }, "p", function() awful.spawn.with_shell(terminal .. " --class password-fzf -e /home/zerbini/Scripts/fzf-pass-info") end,
