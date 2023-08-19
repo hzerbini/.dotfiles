@@ -805,7 +805,7 @@ awful.rules.rules = {
     },
     {
         rule_any = {
-            class = { "Spotify"}
+            class = { "Spotify", "obs"}
         },
         properties = { tag = "6", focus = true, switchtotag = true},
     },
