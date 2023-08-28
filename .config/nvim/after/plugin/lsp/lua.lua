@@ -1,3 +1,15 @@
+-- IMPORTANT: make sure to setup neodev BEFORE lspconfig
+require("neodev").setup({
+  -- add any options here, or leave empty to use the default settings
+})
+-- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- The following example advertise capabilities to `clangd`.
+require'lspconfig'.clangd.setup {
+  capabilities = capabilities,
+}
+
 require'lspconfig'.lua_ls.setup {
     on_init = function(client)
         local path = client.workspace_folders[1].name
@@ -18,5 +30,6 @@ require'lspconfig'.lua_ls.setup {
             client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
         end
         return true
-    end
+    end,
+    capabilities = capabilities,
 }
