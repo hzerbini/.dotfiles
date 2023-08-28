@@ -47,6 +47,7 @@ sudo pacman -S acpi \
     youtube-dl \
     zathura \
     zathura-pdf-mupdf \
+    zip \
     zoxide \
     zsh
 
