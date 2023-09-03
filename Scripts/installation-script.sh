@@ -15,7 +15,9 @@ sudo pacman -S acpi \
     fzf \
     gimp \
     go \
+    helm \
     httpie \
+    istio \
     keepassxc \
     kubectl \
     libreoffice-still \
@@ -66,6 +68,7 @@ paru -S activitywatch \
     mongosh-bin \
     nvim-packer-git \
     pcloud-drive \
+    rancher-k3d-bin \
     spotify \
     studio-3t \
     tmux-plugin-manager \
