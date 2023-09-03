@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-languages=`echo "golang lua cpp c typescript javascript nodejs php laravel" | tr ' ' '\n'`
+languages=`echo "golang lua cpp c typescript javascript nodejs php laravel react" | tr ' ' '\n'`
 core_utils=`echo "xargs find mv sed awk gnupg" | tr ' ' '\n'`
 
 selected=`printf "$languages\n$core_utils" | sort -r | fzf`
