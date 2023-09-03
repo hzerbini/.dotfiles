@@ -1,15 +1,15 @@
 require("mason").setup()
 require("mason-lspconfig").setup {
-    ensured_instaled = {
+    ensure_installed = {
         'emmet_ls',
         'gopls',
         'lua_ls',
-        'phpactor',
+        'intelephense',
         'rust_analyzer',
-        'tailwindcss-language-server',
+        'tailwindcss',
         'tsserver',
-        'yaml-language-server',
-    }
+        'yamlls',
+    },
 }
 
 -- Global Mappings -- Without Need to Attach
