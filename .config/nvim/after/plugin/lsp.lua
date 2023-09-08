@@ -67,6 +67,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 
+
 cmp.setup({
     snippet = {
         -- REQUIRED - you must specify a snippet engine
@@ -92,6 +93,7 @@ cmp.setup({
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'luasnip' }, -- For luasnip users.
+        { name = 'cmp-tw2css' },
         { name = 'buffer', keyword_length = 5}
     },
     experimental = {
@@ -107,6 +109,7 @@ cmp.setup({
                 nvim_lua = "[api]",
                 path = "[path]",
                 luasnip = "[snip]",
+                ["cmp-tw2css"] = "[tw2css]",
             }
 
         }
