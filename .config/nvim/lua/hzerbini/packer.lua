@@ -37,7 +37,6 @@ return require('packer').startup(function(use)
 
     use('numToStr/Comment.nvim')
     use('kylechui/nvim-surround')
-    use('github/copilot.vim')
 
     use('folke/trouble.nvim')
 
@@ -50,6 +49,7 @@ return require('packer').startup(function(use)
     use('hrsh7th/cmp-buffer')
     use('jcha0713/cmp-tw2css')
     use('onsails/lspkind.nvim')
+    use('jcdickinson/codeium.nvim')
 
     -- Snippets
     use({
@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
         -- follow latest release.
         tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
         -- install jsregexp (optional!:).
-        run = "make install_jsregexp"
+        run = "maje install_jsregexp"
     })
     use('saadparwaiz1/cmp_luasnip')
 

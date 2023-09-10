@@ -67,7 +67,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 require('cmp-tw2css').setup()
-
+require('codeium').setup()
 
 cmp.setup({
     snippet = {
@@ -90,6 +90,7 @@ cmp.setup({
         ["<C-Space>"] = cmp.mapping.complete(),
     }),
     sources = {
+        { name = "codeium" },
         { name = 'nvim_lua' },
         { name = 'nvim_lsp' },
         { name = 'path' },
@@ -106,13 +107,13 @@ cmp.setup({
             with_text = true,
             menu = {
                 buffer = "[buf]",
+                codeium = "[AI]",
                 nvim_lsp = "[LSP]",
                 nvim_lua = "[api]",
                 path = "[path]",
                 luasnip = "[snip]",
                 ["cmp-tw2css"] = "[tw2css]",
             }
-
         }
     }
 })
