@@ -66,6 +66,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+require('cmp-tw2css').setup()
 
 
 cmp.setup({
