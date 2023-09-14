@@ -40,6 +40,9 @@ return require('packer').startup(function(use)
 
     use('folke/trouble.nvim')
 
+    -- A.I Helper
+    use('Exafunction/codeium.vim')
+
     -- LSP
     use('neovim/nvim-lspconfig')
     use('hrsh7th/cmp-nvim-lsp')
@@ -49,7 +52,6 @@ return require('packer').startup(function(use)
     use('hrsh7th/cmp-buffer')
     use('jcha0713/cmp-tw2css')
     use('onsails/lspkind.nvim')
-    use('jcdickinson/codeium.nvim')
 
     -- Snippets
     use({
