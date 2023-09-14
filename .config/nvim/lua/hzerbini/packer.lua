@@ -10,7 +10,7 @@ return require('packer').startup(function(use)
     use {
         'nvim-telescope/telescope.nvim', tag = '0.1.0',
         -- or                            , branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
     use('tpope/vim-unimpaired')
@@ -26,7 +26,7 @@ return require('packer').startup(function(use)
         'nvim-lualine/lualine.nvim',
     }
 
-    use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+    use({ 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' })
     use('nvim-treesitter/playground')
     use('nvim-treesitter/nvim-treesitter-context')
     use('theprimeagen/harpoon')
@@ -110,6 +110,4 @@ return require('packer').startup(function(use)
 
     -- Colors
     use('norcalli/nvim-colorizer.lua')
-
 end)
-
