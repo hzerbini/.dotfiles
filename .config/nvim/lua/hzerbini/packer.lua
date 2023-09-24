@@ -43,6 +43,11 @@ return require('packer').startup(function(use)
     -- A.I Helper
     use('Exafunction/codeium.vim')
 
+    -- Database
+    use('tpope/vim-dadbod')
+    use('kristijanhusak/vim-dadbod-ui')
+    use('kristijanhusak/vim-dadbod-completion')
+
     -- LSP
     use('neovim/nvim-lspconfig')
     use('hrsh7th/cmp-nvim-lsp')

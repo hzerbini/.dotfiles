@@ -33,6 +33,7 @@ sudo pacman -S acpi \
     pass \
     picom \
     playerctl \
+    postgres \
     pulsemixer \
     ripgrep \
     rofi \
