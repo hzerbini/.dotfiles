@@ -1,4 +1,7 @@
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 require'lspconfig'.emmet_ls.setup{
+    capabilities = capabilities,
 
     filetypes = {
         "astro",

@@ -90,9 +90,11 @@ cmp.setup({
     }),
     sources = {
         { name = 'nvim_lua' },
+        { name = 'luasnip' }, -- For luasnip users.
         { name = 'nvim_lsp' },
         { name = 'path' },
         { name = 'luasnip' }, -- For luasnip users.
+        { name = 'vim-dadbod-completion' },
         { name = 'cmp-tw2css' },
         { name = 'buffer', keyword_length = 5}
     },
@@ -111,6 +113,7 @@ cmp.setup({
                 path = "[path]",
                 luasnip = "[snip]",
                 ["cmp-tw2css"] = "[tw2css]",
+                ["vim-dadbod-completion"] = "[DB]",
             }
         }
     }
