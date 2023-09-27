@@ -67,6 +67,7 @@ return require('packer').startup(function(use)
         run = "maje install_jsregexp"
     })
     use('saadparwaiz1/cmp_luasnip')
+    use("rafamadriz/friendly-snippets")
 
     -- LSP Language Specific
     use('folke/neodev.nvim')
