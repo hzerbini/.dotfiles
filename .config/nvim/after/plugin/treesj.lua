@@ -29,4 +29,4 @@ tsj.setup({
 })
 
 -- keymaps
-vim.keymap.set('n', '<leader>t', "<cmd>TSJToggle<cr>", { })
+vim.keymap.set('n', '<leader>T', "<cmd>TSJToggle<cr>", { })
