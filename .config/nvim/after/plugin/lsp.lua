@@ -3,8 +3,8 @@ require("mason-lspconfig").setup({
     ensure_installed = {
         "emmet_ls",
         "gopls",
-        "lua_ls",
         "intelephense",
+        "lua_ls",
         "rust_analyzer",
         "tailwindcss",
         "tsserver",
@@ -14,8 +14,14 @@ require("mason-lspconfig").setup({
 
 require("mason-tool-installer").setup({
     ensure_installed = {
-        "prettierd",
+        "delve",
+        "eslint_d",
+        "js-debug-adapter",
+        "php-debug-adapter",
+        "phpcs",
+        "pint",
         "prettier",
+        "prettierd",
         "stylua",
     },
 })

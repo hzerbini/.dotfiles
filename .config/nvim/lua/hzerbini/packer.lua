@@ -62,6 +62,9 @@ return require("packer").startup(function(use)
     -- LSP Language Specific
     use("folke/neodev.nvim")
 
+    -- Linter
+    use("mfussenegger/nvim-lint")
+
     -- Formatter
     use("stevearc/conform.nvim")
 
@@ -90,6 +93,7 @@ return require("packer").startup(function(use)
     -- DAP
     use("mfussenegger/nvim-dap")
     use("rcarriga/nvim-dap-ui")
+    use("leoluz/nvim-dap-go")
     use("theHamsta/nvim-dap-virtual-text")
     use("nvim-telescope/telescope-dap.nvim")
 

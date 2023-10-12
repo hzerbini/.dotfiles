@@ -1,7 +1,13 @@
 local dap = require("dap")
 local dapui = require("dapui")
 local dap_virtual_text = require("nvim-dap-virtual-text")
--- local theme = require("nord")
+local dap_go = require("dap-go")
+
+dap_go.setup({
+    delve = {
+        path = vim.fn.stdpath("data") .. "/mason/bin/dlv",
+    },
+})
 
 dap.adapters.php = {
     type = "executable",
@@ -91,3 +97,8 @@ vim.keymap.set(
 )
 vim.keymap.set("n", "<leader>Dr", ":lua require('dap').repl.toggle()<CR>")
 vim.keymap.set("n", "<leader>Du", ":lua require('dapui').toggle()<CR>")
+vim.keymap.set("n", "<leader>Dt", function()
+    if vim.bo.filetype == "go" then
+        dap_go.debug_test()
+    end
+end)
