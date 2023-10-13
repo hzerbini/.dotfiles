@@ -24,5 +24,5 @@
 -- parse = function() return require("luasnip.util.parser").parse_snippet end,
 -- ms = function() return require("luasnip.nodes.multiSnippet").new_multisnippet end,
 return {
-    s("exemplo-php", t("este é apenas um exemplo de snippet php"))
+	s("exemplo-php", t("este é apenas um exemplo de snippet php")),
 }

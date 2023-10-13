@@ -4,15 +4,15 @@ local dap_virtual_text = require("nvim-dap-virtual-text")
 local dap_go = require("dap-go")
 
 dap_go.setup({
-    delve = {
-        path = vim.fn.stdpath("data") .. "/mason/bin/dlv",
-    },
+	delve = {
+		path = vim.fn.stdpath("data") .. "/mason/bin/dlv",
+	},
 })
 
 dap.adapters.php = {
-    type = "executable",
-    command = vim.fn.stdpath("data") .. "/mason/bin/php-debug-adapter",
-    -- args = { vim.fn.stdpath("data") .. '/mason/bin/php-debug-adapter' }
+	type = "executable",
+	command = vim.fn.stdpath("data") .. "/mason/bin/php-debug-adapter",
+	-- args = { vim.fn.stdpath("data") .. '/mason/bin/php-debug-adapter' }
 }
 
 -- dap.adapters.codelldb = require("rust-tools.dap").get_codelldb_adapter(
@@ -21,38 +21,38 @@ dap.adapters.php = {
 -- )
 
 dap.adapters.codelldb = {
-    type = "server",
-    port = "${port}",
-    executable = {
-        command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
-        args = { "--port", "${port}" },
-    },
+	type = "server",
+	port = "${port}",
+	executable = {
+		command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
+		args = { "--port", "${port}" },
+	},
 }
 
 dap.configurations.php = {
-    {
-        type = "php",
-        request = "launch",
-        name = "Listen for Xdebug",
-        port = 9003,
-        log = true,
-        pathMappings = {
-            ["/var/www"] = "${workspaceFolder}",
-        },
-    },
+	{
+		type = "php",
+		request = "launch",
+		name = "Listen for Xdebug",
+		port = 9003,
+		log = true,
+		pathMappings = {
+			["/var/www"] = "${workspaceFolder}",
+		},
+	},
 }
 
 dap.configurations.cpp = {
-    {
-        name = "Launch file",
-        type = "codelldb",
-        request = "launch",
-        program = function()
-            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
-        end,
-        cwd = "${workspaceFolder}",
-        stopOnEntry = false,
-    },
+	{
+		name = "Launch file",
+		type = "codelldb",
+		request = "launch",
+		program = function()
+			return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
+		end,
+		cwd = "${workspaceFolder}",
+		stopOnEntry = false,
+	},
 }
 
 dap.configurations.c = dap.configurations.cpp
@@ -63,13 +63,13 @@ dapui.setup()
 dap_virtual_text.setup()
 
 dap.listeners.after.event_initialized["dapui_config"] = function()
-    dapui.open()
+	dapui.open()
 end
 dap.listeners.before.event_terminated["dapui_config"] = function()
-    dapui.close()
+	dapui.close()
 end
 dap.listeners.before.event_exited["dapui_config"] = function()
-    dapui.close()
+	dapui.close()
 end
 
 --
@@ -85,20 +85,16 @@ vim.keymap.set("n", "<leader>Dk", ":lua require('dap').step_out()<CR>")
 vim.keymap.set("n", "<leader>Dl", ":lua require('dap').step_into()<CR>")
 vim.keymap.set("n", "<leader>Dj", ":lua require('dap').step_over()<CR>")
 vim.keymap.set("n", "<leader>Db", ":lua require('dap').toggle_breakpoint()<CR>")
+vim.keymap.set("n", "<leader>DB", ":lua require('dap').set_breakpoint(vim.fn.input('condition: '))<CR>")
 vim.keymap.set(
-    "n",
-    "<leader>DB",
-    ":lua require('dap').set_breakpoint(vim.fn.input('condition: '))<CR>"
-)
-vim.keymap.set(
-    "n",
-    "<leader>Dlp",
-    ":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>"
+	"n",
+	"<leader>Dlp",
+	":lua require('dap').set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>"
 )
 vim.keymap.set("n", "<leader>Dr", ":lua require('dap').repl.toggle()<CR>")
 vim.keymap.set("n", "<leader>Du", ":lua require('dapui').toggle()<CR>")
 vim.keymap.set("n", "<leader>Dt", function()
-    if vim.bo.filetype == "go" then
-        dap_go.debug_test()
-    end
+	if vim.bo.filetype == "go" then
+		dap_go.debug_test()
+	end
 end)

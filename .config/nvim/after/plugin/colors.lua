@@ -10,4 +10,4 @@ vim.g.nord_uniform_diff_background = true
 vim.g.nord_bold = true
 
 -- Load the colorscheme
-require('nord').set()
+require("nord").set()
