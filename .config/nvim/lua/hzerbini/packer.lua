@@ -4,105 +4,110 @@
 vim.cmd.packadd("packer.nvim")
 
 return require("packer").startup(function(use)
-	-- Packer can manage itself
-	use("wbthomason/packer.nvim")
+    -- Packer can manage itself
+    use("wbthomason/packer.nvim")
 
-	use({
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.0",
-		-- or                            , branch = '0.1.x',
-		requires = { { "nvim-lua/plenary.nvim" } },
-	})
+    use({
+        "nvim-telescope/telescope.nvim",
+        tag = "0.1.0",
+        -- or                            , branch = '0.1.x',
+        requires = { { "nvim-lua/plenary.nvim" } },
+    })
 
-	use("tpope/vim-unimpaired")
+    use("tpope/vim-unimpaired")
 
-	-- Telemetry
-	use("ActivityWatch/aw-watcher-vim")
+    use({
+        "nvim-neorg/neorg",
+        run = ":Neorg sync-parsers",
+    })
 
-	use("nvim-telescope/telescope-file-browser.nvim")
-	use("ThePrimeagen/git-worktree.nvim")
+    -- Telemetry
+    use("ActivityWatch/aw-watcher-vim")
 
-	use("shaunsingh/nord.nvim")
-	use({
-		"nvim-lualine/lualine.nvim",
-	})
+    use("nvim-telescope/telescope-file-browser.nvim")
+    use("ThePrimeagen/git-worktree.nvim")
 
-	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-	use("nvim-treesitter/playground")
-	use("nvim-treesitter/nvim-treesitter-context")
-	use("theprimeagen/harpoon")
-	use("mbbill/undotree")
-	use("tpope/vim-fugitive")
+    use("shaunsingh/nord.nvim")
+    use({
+        "nvim-lualine/lualine.nvim",
+    })
 
-	use("Wansmer/treesj")
+    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+    use("nvim-treesitter/playground")
+    use("nvim-treesitter/nvim-treesitter-context")
+    use("theprimeagen/harpoon")
+    use("mbbill/undotree")
+    use("tpope/vim-fugitive")
 
-	use("numToStr/Comment.nvim")
-	use("kylechui/nvim-surround")
+    use("Wansmer/treesj")
 
-	use("folke/trouble.nvim")
+    use("numToStr/Comment.nvim")
+    use("kylechui/nvim-surround")
 
-	-- A.I Helper
-	use("Exafunction/codeium.vim")
+    use("folke/trouble.nvim")
 
-	-- Database
-	use("tpope/vim-dadbod")
-	use("kristijanhusak/vim-dadbod-ui")
-	use("kristijanhusak/vim-dadbod-completion")
+    -- A.I Helper
+    use("Exafunction/codeium.vim")
 
-	-- LSP
-	use("neovim/nvim-lspconfig")
-	use("hrsh7th/cmp-nvim-lsp")
-	use("hrsh7th/cmp-nvim-lua")
-	use("hrsh7th/cmp-path")
-	use("hrsh7th/nvim-cmp")
-	use("hrsh7th/cmp-buffer")
-	use("jcha0713/cmp-tw2css")
-	use("onsails/lspkind.nvim")
+    -- Database
+    use("tpope/vim-dadbod")
+    use("kristijanhusak/vim-dadbod-ui")
+    use("kristijanhusak/vim-dadbod-completion")
 
-	-- LSP Language Specific
-	use("folke/neodev.nvim")
+    -- LSP
+    use("neovim/nvim-lspconfig")
+    use("hrsh7th/cmp-nvim-lsp")
+    use("hrsh7th/cmp-nvim-lua")
+    use("hrsh7th/cmp-path")
+    use("hrsh7th/nvim-cmp")
+    use("hrsh7th/cmp-buffer")
+    use("jcha0713/cmp-tw2css")
+    use("onsails/lspkind.nvim")
 
-	-- Linter
-	use("mfussenegger/nvim-lint")
+    -- LSP Language Specific
+    use("folke/neodev.nvim")
 
-	-- Formatter
-	use("stevearc/conform.nvim")
+    -- Linter
+    use("mfussenegger/nvim-lint")
 
-	-- Snippets
-	use({
-		"L3MON4D3/LuaSnip",
-		-- follow latest release.
-		tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
-		-- install jsregexp (optional!:).
-		run = "maje install_jsregexp",
-	})
-	use("saadparwaiz1/cmp_luasnip")
-	use("rafamadriz/friendly-snippets")
+    -- Formatter
+    use("stevearc/conform.nvim")
 
-	-- Installer
-	use("williamboman/mason.nvim")
-	use("williamboman/mason-lspconfig.nvim")
-	use("WhoIsSethDaniel/mason-tool-installer.nvim")
+    -- Snippets
+    use({
+        "L3MON4D3/LuaSnip",
+        -- follow latest release.
+        tag = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+        -- install jsregexp (optional!:).
+        run = "maje install_jsregexp",
+    })
+    use("saadparwaiz1/cmp_luasnip")
+    use("rafamadriz/friendly-snippets")
 
-	-- Test Configuration
-	use("nvim-neotest/neotest")
-	use("nvim-neotest/neotest-go")
-	use("nvim-neotest/neotest-plenary")
-	use("olimorris/neotest-phpunit")
+    -- Installer
+    use("williamboman/mason.nvim")
+    use("williamboman/mason-lspconfig.nvim")
+    use("WhoIsSethDaniel/mason-tool-installer.nvim")
 
-	-- DAP
-	use("mfussenegger/nvim-dap")
-	use("rcarriga/nvim-dap-ui")
-	use("leoluz/nvim-dap-go")
-	use("theHamsta/nvim-dap-virtual-text")
-	use("nvim-telescope/telescope-dap.nvim")
+    -- Test Configuration
+    use("nvim-neotest/neotest")
+    use("nvim-neotest/neotest-go")
+    use("nvim-neotest/neotest-plenary")
+    use("olimorris/neotest-phpunit")
 
-	use("folke/zen-mode.nvim")
-	use("eandrju/cellular-automaton.nvim")
+    -- DAP
+    use("mfussenegger/nvim-dap")
+    use("rcarriga/nvim-dap-ui")
+    use("leoluz/nvim-dap-go")
+    use("theHamsta/nvim-dap-virtual-text")
+    use("nvim-telescope/telescope-dap.nvim")
 
-	-- Web icons
-	use("nvim-tree/nvim-web-devicons")
+    use("folke/zen-mode.nvim")
+    use("eandrju/cellular-automaton.nvim")
 
-	-- Colors
-	use("norcalli/nvim-colorizer.lua")
+    -- Web icons
+    use("nvim-tree/nvim-web-devicons")
+
+    -- Colors
+    use("norcalli/nvim-colorizer.lua")
 end)
