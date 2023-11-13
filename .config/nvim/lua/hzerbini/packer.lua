@@ -16,11 +16,6 @@ return require("packer").startup(function(use)
 
     use("tpope/vim-unimpaired")
 
-    use({
-        "nvim-neorg/neorg",
-        run = ":Neorg sync-parsers",
-    })
-
     -- Telemetry
     use("ActivityWatch/aw-watcher-vim")
 
