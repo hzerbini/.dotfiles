@@ -70,7 +70,7 @@ ZSH_THEME="clean"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git laravel node docker tmux)
-plugins=(git laravel node docker tmux)
+plugins=(git laravel node docker tmux fzf)
 
 source $ZSH/oh-my-zsh.sh
 
