@@ -27,3 +27,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
+
+-- spellcheck options
+
+vim.opt.spelllang = "en_us,pt_br"
+vim.opt.spell = true
