@@ -1,0 +1,8 @@
+require("hzerbini.lsp.go")
+require("hzerbini.lsp.lua")
+require("hzerbini.lsp.php")
+require("hzerbini.lsp.yaml")
+require("hzerbini.lsp.emmet")
+require("hzerbini.lsp.sqlls")
+require("hzerbini.lsp.tsserver")
+require("hzerbini.lsp.tailwindcss")
