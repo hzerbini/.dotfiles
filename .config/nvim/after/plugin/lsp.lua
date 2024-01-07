@@ -68,32 +68,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
--- -- Fix Undefined global 'vim'
--- lsp.configure('lua_ls', {
---     settings = {
---         Lua = {
---             diagnostics = {
---                 globals = { 'vim' }
---             }
---         }
---     }
--- })
-
--- lsp.configure('emmet_ls', {
---     filetypes = {
---         'php',
---         'html',
---         'css',
---         'javascript',
---         'javascriptreact',
---         'typescript',
---         'typescriptreact',
---         'svelte',
---         'vue',
---         'markdown'
---     }
--- })
-
 local cmp = require("cmp")
 local lspkind = require("lspkind")
 require("cmp-tw2css").setup()
@@ -127,7 +101,14 @@ cmp.setup({
 		{ name = "vim-dadbod-completion" },
 		{ name = "cmp-tw2css" },
 		{ name = "buffer", keyword_length = 5 },
-	},
+        { name = "spell", option = {
+            keep_all_entries = false,
+            enable_in_context = function()
+                return true
+            end
+        }}
+    },
+
 	experimental = {
 		native_menu = false,
 		ghost_text = false,
@@ -137,6 +118,7 @@ cmp.setup({
 			with_text = true,
 			menu = {
 				buffer = "[buf]",
+				spell = "[spell]",
 				codeium = "[AI]",
 				nvim_lsp = "[LSP]",
 				nvim_lua = "[api]",
