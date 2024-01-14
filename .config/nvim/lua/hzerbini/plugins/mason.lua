@@ -7,6 +7,7 @@ return {
         config = function()
             require("mason").setup()
         end,
+        priority = 999,
         lazy = false,
     },
     {
