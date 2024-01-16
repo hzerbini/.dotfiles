@@ -57,14 +57,14 @@ return {
         {
             "[d",
             function()
-                vim.diagnostic.goto_next()
+                vim.diagnostic.goto_prev()
             end,
             buffer = 0,
         },
         {
             "]d",
             function()
-                vim.diagnostic.goto_prev()
+                vim.diagnostic.goto_next()
             end,
             buffer = 0,
         },
