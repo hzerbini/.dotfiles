@@ -2,9 +2,15 @@ return {
     {
         "nvim-treesitter/nvim-treesitter",
         build = ":TSUpdate",
+        dependecies = {
+            "nvim-treesitter/nvim-treesitter-textobjects",
+        },
+        -- event = { "BufReadPost", "BufNewFile" },
+        lazy = false,
+        priority = 999,
         config = function()
             local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-
+            ---@diagnostic disable-next-line: inject-field
             parser_config.blade = {
                 install_info = {
                     url = "https://github.com/EmranMR/tree-sitter-blade",
@@ -17,13 +23,15 @@ return {
             require("nvim-treesitter.configs").setup({
                 -- A list of parser names, or "all"
                 ensure_installed = {
-                    "javascript",
-                    "typescript",
+                    "astro",
+                    "blade",
                     "c",
+                    "html",
+                    "javascript",
                     "lua",
                     "rust",
-                    "blade",
-                    "html",
+                    "typescript",
+                    "tsx",
                 },
                 ignore_install = {},
 
@@ -48,13 +56,84 @@ return {
                     -- Instead of true it can also be a list of languages
                     additional_vim_regex_highlighting = false,
                 },
+                -- incremental_selection = {
+                --     enable = true,
+                --     keymaps = {
+                --         init_selection = "gnn",
+                --         node_incremental = "grn",
+                --         scope_incremental = "grc",
+                --         node_decremental = "grm",
+                --     },
+                -- },
+                textobjects = {
+                    select = {
+                        enable = true,
+
+                        -- Automatically jump forward to textobj, similar to targets.vim
+                        lookahead = true,
+
+                        keymaps = {
+                            -- You can use the capture groups defined in textobjects.scm
+                            ["am"] = "@function.outer",
+                            ["im"] = "@function.inner",
+
+                            ["af"] = "@call.outer",
+                            ["if"] = "@call.inner",
+
+                            ["a/"] = "@comment.outer",
+                            ["i/"] = "@comment.inner",
+
+                            ["ac"] = "@class.outer",
+                            ["ic"] = "@class.inner",
+
+                            ["as"] = "scope",
+
+                            ["a="] = "@assignment.outer",
+                            ["i="] = "@assignment.inner",
+                            [",="] = "@assignment.lhs",
+                            [".="] = "@assignment.rhs",
+
+                            ["aa"] = "@parameter.outer",
+                            ["ia"] = "@parameter.inner",
+
+                            ["ai"] = "@conditional.outer",
+                            ["ii"] = "@conditional.inner",
+
+                            ["al"] = "@loop.outer",
+                            ["il"] = "@loop.inner",
+                        },
+                        -- You can choose the select mode (default is charwise 'v')
+                        --
+                        -- Can also be a function which gets passed a table with the keys
+                        -- * query_string: eg '@function.inner'
+                        -- * method: eg 'v' or 'o'
+                        -- and should return the mode ('v', 'V', or '<c-v>') or a table
+                        -- mapping query_strings to modes.
+                        selection_modes = {
+                            ["@parameter.outer"] = "v", -- charwise
+                            ["@function.outer"] = "V", -- linewise
+                            ["@class.outer"] = "<c-v>", -- blockwise
+                        },
+                        -- If you set this to `true` (default is `false`) then any textobject is
+                        -- extended to include preceding or succeeding whitespace. Succeeding
+                        -- whitespace has priority in order to act similarly to eg the built-in
+                        -- `ap`.
+                        --
+                        -- Can also be a function which gets passed a table with the keys
+                        -- * query_string: eg '@function.inner'
+                        -- * selection_mode: eg 'v'
+                        -- and should return true of false
+                        include_surrounding_whitespace = true,
+                    },
+                },
             })
         end,
-        lazy = false,
     },
-    { "nvim-treesitter/playground", lazy = false },
+    { "nvim-treesitter/playground" },
+    { "nvim-treesitter/nvim-treesitter-textobjects" },
     {
         "nvim-treesitter/nvim-treesitter-context",
+        event = { "BufReadPost", "BufNewFile" },
         config = function()
             require("treesitter-context").setup({
                 enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
@@ -70,6 +149,5 @@ return {
                 zindex = 20, -- The Z-index of the context window
             })
         end,
-        lazy = false,
     },
 }

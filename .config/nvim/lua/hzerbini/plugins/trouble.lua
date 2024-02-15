@@ -1,5 +1,6 @@
 return {
     "folke/trouble.nvim",
+    event = "BufEnter",
     config = function()
         local trouble = require("trouble")
 

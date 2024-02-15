@@ -15,9 +15,12 @@ return {
         config = function()
             require("mason-lspconfig").setup({
                 ensure_installed = {
+                    "astro",
                     "emmet_ls",
                     "gopls",
+                    "html",
                     "intelephense",
+                    "jsonls",
                     "lua_ls",
                     "rust_analyzer",
                     "tailwindcss",

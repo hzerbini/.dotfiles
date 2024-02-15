@@ -1,25 +1,29 @@
 return {
     {
         "stevearc/conform.nvim",
+        event = { "BufWritePre" },
+        cmd = { "ConformInfo" },
         config = function()
             local conform = require("conform")
             local slow_format_filetypes = {}
+            conform.formatters.inject = {}
 
             conform.setup({
                 formatters_by_ft = {
+                    astro = { "prettier" },
                     lua = { "stylua" },
                     blade = { "blade-formatter" },
                     -- Use a sub-list to run only the first available formatter
-                    javascript = { { "prettierd", "prettier" } },
-                    typescript = { { "prettierd", "prettier" } },
-                    javascriptreact = { { "prettierd", "prettier" } },
-                    typescriptreact = { { "prettierd", "prettier" } },
-                    json = { "prettierd", "prettier" },
-                    html = { "prettierd", "prettier" },
-                    css = { "prettierd", "prettier" },
-                    markdown = { "prettierd", "prettier" },
-                    yaml = { "prettierd", "prettier" },
-                    yamlreact = { "prettierd", "prettier" },
+                    javascript = { "prettier" },
+                    typescript = { "prettier" },
+                    javascriptreact = { "prettier" },
+                    typescriptreact = { "prettier" },
+                    json = { "prettier" },
+                    html = { "prettier" },
+                    css = { "prettier" },
+                    markdown = { "prettier" },
+                    yaml = { "prettier" },
+                    yamlreact = { "prettier" },
                     php = { "pint" },
                 },
                 format_on_save = function(bufnr)
@@ -41,7 +45,8 @@ return {
                     end
                     return { lsp_fallback = true }
                 end,
-                log_level = vim.log.levels.WARN,
+                log_level = vim.log.levels.TRACE,
+                notify_on_error = true,
                 formatters = {
                     pint = {
                         -- This can be a string or a function that returns a string

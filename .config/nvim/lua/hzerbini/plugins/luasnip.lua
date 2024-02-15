@@ -5,6 +5,7 @@ return {
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
+    event = "BufEnter",
 
     config = function()
         local ls = require("luasnip")

@@ -16,7 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("hzerbini/plugins")
 
-
 local augroup = vim.api.nvim_create_augroup
 local HZerbiniGroup = augroup("hzerbini", {})
 
@@ -53,4 +52,12 @@ vim.filetype.add({
     pattern = {
         [".*%.blade%.php"] = "blade",
     },
+})
+
+vim.filetype.add({
+    extension = {
+        mdx = "markdown.mdx",
+    },
+    filename = {},
+    pattern = {},
 })

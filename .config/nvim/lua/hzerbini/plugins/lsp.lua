@@ -35,8 +35,6 @@ return {
                     end, opts)
                 end,
             })
-
-            require("hzerbini.lsp")
         end,
     },
     {
@@ -51,7 +49,7 @@ return {
             "onsails/lspkind.nvim",
             "saadparwaiz1/cmp_luasnip",
         },
-        lazy = false,
+        event = "BufEnter",
         config = function()
             local cmp = require("cmp")
             local lspkind = require("lspkind")
@@ -105,20 +103,30 @@ return {
                     ghost_text = false,
                 },
                 formatting = {
-                    format = lspkind.cmp_format({
-                        with_text = true,
-                        menu = {
-                            buffer = "[buf]",
-                            spell = "[spell]",
-                            codeium = "[AI]",
-                            nvim_lsp = "[LSP]",
-                            nvim_lua = "[api]",
-                            path = "[path]",
-                            luasnip = "[snip]",
-                            ["cmp-tw2css"] = "[tw2css]",
-                            ["vim-dadbod-completion"] = "[DB]",
-                        },
-                    }),
+                    format = function(entry, vim_item)
+                        local lspserver_name = "undefined"
+                        if entry.source.name == "nvim_lsp" then
+                            -- Display which LSP servers this item came from.
+                            pcall(function()
+                                lspserver_name = entry.source.source.client.name
+                            end)
+                        end
+
+                        return lspkind.cmp_format({
+                            with_text = true,
+                            menu = {
+                                buffer = "[buf]",
+                                spell = "[spell]",
+                                codeium = "[AI]",
+                                nvim_lsp = "[" .. lspserver_name .. "]",
+                                nvim_lua = "[api]",
+                                path = "[path]",
+                                luasnip = "[snip]",
+                                ["cmp-tw2css"] = "[tw2css]",
+                                ["vim-dadbod-completion"] = "[DB]",
+                            },
+                        })(entry, vim_item)
+                    end,
                 },
             })
 
@@ -147,6 +155,9 @@ return {
                 signs = {},
                 virtual_text = true,
             })
+
+            vim.lsp.set_log_level("warn")
+            require("hzerbini.lsp")
         end,
     },
     "folke/neodev.nvim",

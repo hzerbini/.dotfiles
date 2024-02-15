@@ -1,7 +1,9 @@
 return {
     "mfussenegger/nvim-lint",
+    event = "BufEnter",
     config = function()
         require("lint").linters_by_ft = {
+            astro = { "eslint_d" },
             javascript = { "eslint_d" },
             typescript = { "eslint_d" },
             typescriptreact = { "eslint_d" },
