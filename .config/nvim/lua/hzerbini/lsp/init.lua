@@ -1,4 +1,5 @@
 require("hzerbini.lsp.astro")
+require("hzerbini.lsp.dart")
 require("hzerbini.lsp.emmet")
 require("hzerbini.lsp.go")
 require("hzerbini.lsp.html")

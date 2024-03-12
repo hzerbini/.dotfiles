@@ -134,7 +134,7 @@ zinit light zsh-users/zsh-completions
 
 # . /usr/share/powerline/bindings/zsh/powerline.zsh
 alias luamake=/luamake
-PATH="$HOME/.local/bin:$PATH"
+PATH="/opt/flutter/bin:$HOME/.local/bin:$HOME/.pub-cache/bin:$PATH"
 
 alias config='/usr/bin/git --git-dir=/home/zerbini/.dotfiles/ --work-tree=/home/zerbini'
 
