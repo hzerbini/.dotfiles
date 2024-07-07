@@ -48,6 +48,7 @@ return {
             "jcha0713/cmp-tw2css",
             "onsails/lspkind.nvim",
             "saadparwaiz1/cmp_luasnip",
+            "kristijanhusak/vim-dadbod-completion",
         },
         event = "BufEnter",
         config = function()

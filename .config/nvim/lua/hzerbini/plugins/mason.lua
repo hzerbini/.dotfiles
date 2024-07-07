@@ -16,7 +16,8 @@ return {
             require("mason-lspconfig").setup({
                 ensure_installed = {
                     "astro",
-                    "dartls",
+                    -- "dartls",
+                    "sqls",
                     "emmet_ls",
                     "gopls",
                     "html",
