@@ -1,6 +1,6 @@
 return {
     "Exafunction/codeium.vim",
-    config = function()
+    init = function()
         vim.g.codeium_disable_bindings = 1
     end,
     keys = {

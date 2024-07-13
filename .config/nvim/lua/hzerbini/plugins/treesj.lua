@@ -1,37 +1,30 @@
 return {
     "Wansmer/treesj",
-    config = function()
-        local tsj = require("treesj")
+    opts = {
+        -- Use default keymaps
+        -- (<space>m - toggle, <space>j - join, <space>s - split)
+        use_default_keymaps = false,
 
-        local langs = {--[[ configuration for languages ]]
-        }
+        -- Node with syntax error will not be formatted
+        check_syntax_error = true,
 
-        tsj.setup({
-            -- Use default keymaps
-            -- (<space>m - toggle, <space>j - join, <space>s - split)
-            use_default_keymaps = false,
+        -- If line after join will be longer than max value,
+        -- node will not be formatted
+        max_join_length = 120,
 
-            -- Node with syntax error will not be formatted
-            check_syntax_error = true,
+        -- hold|start|end:
+        -- hold - cursor follows the node/place on which it was called
+        -- start - cursor jumps to the first symbol of the node being formatted
+        -- end - cursor jumps to the last symbol of the node being formatted
+        cursor_behavior = "end",
 
-            -- If line after join will be longer than max value,
-            -- node will not be formatted
-            max_join_length = 120,
+        -- Notify about possible problems or not
+        notify = true,
+        langs = {},
 
-            -- hold|start|end:
-            -- hold - cursor follows the node/place on which it was called
-            -- start - cursor jumps to the first symbol of the node being formatted
-            -- end - cursor jumps to the last symbol of the node being formatted
-            cursor_behavior = "hold",
-
-            -- Notify about possible problems or not
-            notify = true,
-            langs = langs,
-
-            -- Use `dot` for repeat action
-            dot_repeat = true,
-        })
-    end,
+        -- Use `dot` for repeat action
+        dot_repeat = true,
+    },
     keys = {
         { "<leader>T", "<cmd>TSJToggle<cr>" },
     },

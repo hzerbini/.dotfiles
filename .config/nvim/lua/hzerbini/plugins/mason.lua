@@ -17,7 +17,6 @@ return {
                 ensure_installed = {
                     "astro",
                     -- "dartls",
-                    "sqls",
                     "emmet_ls",
                     "gopls",
                     "html",

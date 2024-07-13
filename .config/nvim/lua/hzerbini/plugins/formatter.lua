@@ -10,21 +10,21 @@ return {
 
             conform.setup({
                 formatters_by_ft = {
-                    astro = { "prettier" },
-                    lua = { "stylua" },
-                    blade = { "blade-formatter" },
                     -- Use a sub-list to run only the first available formatter
-                    javascript = { "prettier" },
-                    typescript = { "prettier" },
-                    javascriptreact = { "prettier" },
-                    typescriptreact = { "prettier" },
-                    json = { "prettier" },
-                    html = { "prettier" },
+                    astro = { "prettier" },
+                    blade = { "blade-formatter" },
                     css = { "prettier" },
+                    html = { "prettier" },
+                    javascript = { "prettier" },
+                    javascriptreact = { "prettier" },
+                    json = { "prettier" },
+                    lua = { "stylua" },
                     markdown = { "prettier" },
+                    php = { "pint" },
+                    typescript = { "prettier" },
+                    typescriptreact = { "prettier" },
                     yaml = { "prettier" },
                     yamlreact = { "prettier" },
-                    php = { "pint" },
                 },
                 format_on_save = function(bufnr)
                     if slow_format_filetypes[vim.bo[bufnr].filetype] then
