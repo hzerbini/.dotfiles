@@ -16,8 +16,7 @@ return {
                 mode = "n",
                 "<C-e>",
                 function()
-                    local harpoon = require("harpoon")
-                    harpoon.ui:toggle_quick_menu(harpoon.list())
+                    require("harpoon").ui:toggle_quick_menu(require("harpoon"):list())
                 end,
             },
             {

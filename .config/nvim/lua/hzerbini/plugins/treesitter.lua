@@ -20,7 +20,7 @@ return {
     },
     {
         "nvim-treesitter/nvim-treesitter",
-        build = ":tsupdate",
+        build = ":TSUpdate",
         dependencies = {
             "nvim-treesitter/nvim-treesitter-textobjects",
             "nvim-treesitter/playground",
