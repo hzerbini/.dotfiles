@@ -57,7 +57,7 @@ end
 beautiful.init("/home/zerbini/.config/awesome/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "wezterm"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -427,7 +427,8 @@ globalkeys = gears.table.join(
 	-- Filebrowser
 
 	awful.key({ modkey }, "e", function()
-		awful.util.spawn("rofi -show filebrowser")
+		-- awful.util.spawn("rofi -show filebrowser")
+		awful.util.spawn(terminal .. " -e yazi")
 	end, { description = "search file", group = "filebrowser" }),
 	-- Aplications
 	awful.key({ modkey }, "a", function()
@@ -506,6 +507,8 @@ globalkeys = gears.table.join(
 				)
 			elseif key == "e" then
 				awful.util.spawn("rofi -modi emoji -show emoji -kb-custom-1 Ctrl+c")
+			elseif key == "x" then
+				awful.util.spawn("colorpicker --short --one-shot | xclip -selection clipboard")
 			end
 
 			-- selected = true
