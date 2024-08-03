@@ -62,6 +62,7 @@ vim.g.editorconfig = true
 vim.filetype.add({
     pattern = {
         [".*%.blade%.php"] = "blade",
+        [".*%.pls"] = "plsql",
     },
 })
 

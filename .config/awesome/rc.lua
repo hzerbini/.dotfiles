@@ -787,7 +787,7 @@ awful.rules.rules = {
 
 	{
 		rule_any = {
-			class = { "Alacritty" },
+			class = { "Alacritty", "org.wezfurlong.wezterm" },
 		},
 		unless = {
 			instance = { "mixer", "spotify" },
