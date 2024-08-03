@@ -8,3 +8,4 @@ if [ -z "$result" ]; then
 fi
 
 echo $result >> $HOME/.ff
+sort -u .ff -o .ff
