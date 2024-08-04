@@ -50,6 +50,7 @@ return {
             "saadparwaiz1/cmp_luasnip",
             "kristijanhusak/vim-dadbod-completion",
         },
+        -- lazy = false,
         event = "BufEnter",
         config = function()
             local cmp = require("cmp")

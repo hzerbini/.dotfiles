@@ -33,3 +33,6 @@ vim.opt.updatetime = 50
 
 vim.opt.spelllang = "en_us,pt_br"
 vim.opt.spell = true
+
+-- Obsidian
+vim.opt.conceallevel = 1

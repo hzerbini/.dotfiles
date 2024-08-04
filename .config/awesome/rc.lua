@@ -296,9 +296,6 @@ root.buttons(gears.table.join(
 -- {{{ Key bindings
 globalkeys = gears.table.join(
 	awful.key({ modkey }, "s", hotkeys_popup.show_help, { description = "show help", group = "awesome" }),
-	awful.key({ modkey }, "/", function()
-		awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/cht.sh")
-	end, { description = "open tmux session creator", group = "launcher" }),
 	awful.key({ modkey }, "Left", awful.tag.viewprev, { description = "view previous", group = "tag" }),
 	awful.key({ modkey }, "Right", awful.tag.viewnext, { description = "view next", group = "tag" }),
 	awful.key({ modkey }, "Escape", awful.tag.history.restore, { description = "go back", group = "tag" }),
@@ -382,6 +379,9 @@ globalkeys = gears.table.join(
 	awful.key({ modkey, "Shift" }, "a", function()
 		awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/fa.sh")
 	end, { description = "put a folder with fzf in ff.sh list", group = "launcher" }),
+	awful.key({ modkey }, "b", function()
+		awful.spawn.with_shell(terminal .. " -e /home/zerbini/Scripts/open-second-brain.sh")
+	end, { description = "Open secound brain", group = "launcher" }),
 	awful.key({ modkey }, "p", function()
 		awful.spawn.with_shell(terminal .. " --class password-fzf -e /home/zerbini/Scripts/fzf-pass")
 	end, { description = "open password fzf", group = "launcher" }),
@@ -530,10 +530,10 @@ globalkeys = gears.table.join(
 
 	-- Sound Control
 	awful.key({ modkey }, "XF86AudioRaiseVolume", function()
-		awful.util.spawn(terminal .. " --class mixer -e pulsemixer")
+		awful.util.spawn(--[[ terminal ..  ]] "alacritty --class mixer -e pulsemixer")
 	end, { description = "open mixer", group = "sound" }),
 	awful.key({ modkey }, "XF86AudioLowerVolume", function()
-		awful.util.spawn(terminal .. " --class mixer -e pulsemixer")
+		awful.util.spawn(--[[ terminal ..  ]] "alacritty --class mixer -e pulsemixer")
 	end, { description = "open mixer", group = "sound" }),
 	awful.key({}, "XF86AudioRaiseVolume", function()
 		volumewidget:inc(5)
