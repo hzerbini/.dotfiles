@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-result="second_brain"
+result="$HOME/pCloudDrive/SecondBrain"
 
 session_list=`tmux list-sessions -F "#S #{session_path}"`
 desired_session=`echo $session_list | grep -E "(^| )$result( |$)"`
@@ -9,9 +9,9 @@ if [ -z $desired_session ]; then
     session_name=$(basename $result)
 
     if [ -z $TMUX ]; then # Not in TMUX
-        tmux new-session -c $result -s $session_name nvim $HOME/pCloudDrive/SecondBrain/0.\ Mocs/Home.md
+        tmux new-session -c $result -s $session_name nvim $result/0.\ Mocs/Home.md
     else
-        tmux new-session -d -c $result -s $session_name nvim $HOME/pCloudDrive/SecondBrain/0.\ Mocs/Home.md
+        tmux new-session -d -c $result -s $session_name nvim $result/0.\ Mocs/Home.md
         tmux switch-client -t $session_name
     fi
 else
