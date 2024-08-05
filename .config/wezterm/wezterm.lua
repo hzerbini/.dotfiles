@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 11.0
+config.font_size = 10.0
 config.color_scheme = "nord"
 config.window_padding = {
 	left = 0,
