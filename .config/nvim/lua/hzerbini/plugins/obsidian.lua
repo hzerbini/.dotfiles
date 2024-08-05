@@ -31,6 +31,11 @@ return {
                 name = "SecondBrain",
                 path = "~/pCloudDrive/SecondBrain",
             },
+            {
+                name = "APC",
+                path = "~/pCloudDrive/SecondBrain/2. Areas/APC/",
+                strict = true,
+            },
             -- {
             --     name = "work",
             --     path = "~/vaults/work",
@@ -121,6 +126,11 @@ return {
             ["<leader>op"] = {
                 action = "<cmd>ObsidianPasteImg<cr>",
                 desc = "Paste obsdian image",
+                opts = { buffer = true },
+            },
+            ["<leader>ow"] = {
+                action = "<cmd>ObsidianWorkspace<cr>",
+                desc = "Change obsidian workspace",
                 opts = { buffer = true },
             },
             -- Smart action depending on context, either follow link or toggle checkbox.

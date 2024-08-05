@@ -1,4 +1,5 @@
 local wezterm = require("wezterm")
+local keys = require("./keys")
 local config = {}
 
 config.font = wezterm.font("JetBrains Mono")
@@ -13,5 +14,10 @@ config.window_padding = {
 config.enable_tab_bar = false
 config.window_close_confirmation = "NeverPrompt"
 config.default_prog = { "/bin/zsh", "-l", "-c", "tmux attach -t default || tmux new -s default" }
+
+-- Configure Keys
+config.disable_default_key_bindings = true
+config.use_ime = true
+config.keys = keys
 
 return config
