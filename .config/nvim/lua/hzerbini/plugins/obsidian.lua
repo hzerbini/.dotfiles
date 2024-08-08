@@ -133,6 +133,18 @@ return {
                 desc = "Change obsidian workspace",
                 opts = { buffer = true },
             },
+            ["<leader>oww"] = {
+                action = function()
+                    local obsidian = require("obsidian")
+                end,
+                desc = "Change obsidian workspace",
+                opts = { buffer = true },
+            },
+            ["<leader>oT"] = {
+                action = "<cmd>ObsidianTemplate<cr>",
+                desc = "Change obsidian workspace",
+                opts = { buffer = true },
+            },
             -- Smart action depending on context, either follow link or toggle checkbox.
             -- ["<cr>"] = {
             --     action = function()

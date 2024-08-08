@@ -1,5 +1,19 @@
 return {
     {
+        "folke/lazydev.nvim",
+        ft = "lua", -- only load on lua files
+        opts = {
+            library = {
+                -- always load the LazyVim library
+                "LazyVim",
+            },
+            -- Load the wezterm types when the `wezterm` module is required
+            -- Needs `justinsgithub/wezterm-types` to be installed
+            { path = "wezterm-types", mods = { "wezterm" } },
+        },
+    },
+    { "folke/neodev.nvim", enabled = false }, -- make sure to uninstall or disable neodev.nvim
+    {
 
         "neovim/nvim-lspconfig",
         config = function()
@@ -82,7 +96,7 @@ return {
                     ["<C-Space>"] = cmp.mapping.complete(),
                 }),
                 sources = {
-                    { name = "nvim_lua" },
+                    { name = "lazydev", group_index = 0 },
                     { name = "nvim_lsp" },
                     { name = "path" },
                     { name = "luasnip" }, -- For luasnip users.
@@ -121,7 +135,7 @@ return {
                                 spell = "[spell]",
                                 codeium = "[AI]",
                                 nvim_lsp = "[" .. lspserver_name .. "]",
-                                nvim_lua = "[api]",
+                                lazydev = "[api]",
                                 path = "[path]",
                                 luasnip = "[snip]",
                                 ["cmp-tw2css"] = "[tw2css]",
