@@ -69,7 +69,7 @@ return {
                 --[[ "daily-notes" ]]
             },
             -- Optional, if you want to automatically insert a template from your template directory like 'daily.md'
-            template = "Daily Note",
+            template = "daily-note",
         },
 
         -- Optional, completion of wiki links, local markdown links, and tags using nvim-cmp.
