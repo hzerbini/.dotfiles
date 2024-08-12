@@ -12,7 +12,6 @@ return {
             { path = "wezterm-types", mods = { "wezterm" } },
         },
     },
-    { "folke/neodev.nvim", enabled = false }, -- make sure to uninstall or disable neodev.nvim
     {
 
         "neovim/nvim-lspconfig",
@@ -176,5 +175,4 @@ return {
             require("hzerbini.lsp")
         end,
     },
-    "folke/neodev.nvim",
 }

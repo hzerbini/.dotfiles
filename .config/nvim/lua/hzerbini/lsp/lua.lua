@@ -1,7 +1,7 @@
 -- IMPORTANT: make sure to setup neodev BEFORE lspconfig
-require("neodev").setup({
-    -- add any options here, or leave empty to use the default settings
-})
+-- require("neodev").setup({
+--     -- add any options here, or leave empty to use the default settings
+-- })
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 

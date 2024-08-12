@@ -29,6 +29,7 @@ return {
             mode = { "i", "s" },
             "<C-J>",
             function()
+                local ls = require("luasnip")
                 if ls.expand_or_jumpable() then
                     ls.expand_or_jump()
                 end
@@ -40,6 +41,7 @@ return {
             mode = { "i", "s" },
             "<C-K>",
             function()
+                local ls = require("luasnip")
                 if ls.jumpable(-1) then
                     ls.jump(-1)
                 end
@@ -51,6 +53,7 @@ return {
             mode = { "i", "s" },
             "<C-L>",
             function()
+                local ls = require("luasnip")
                 if ls.choice_active() then
                     ls.change_choice(1)
                 end

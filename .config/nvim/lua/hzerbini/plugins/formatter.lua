@@ -43,7 +43,7 @@ return {
                     if not slow_format_filetypes[vim.bo[bufnr].filetype] then
                         return
                     end
-                    return { lsp_fallback = false }
+                    return { lsp_fallback = true }
                 end,
                 log_level = vim.log.levels.TRACE,
                 notify_on_error = true,
@@ -87,7 +87,7 @@ return {
                 "<leader>vf",
                 function()
                     require("conform").format({
-                        lsp_fallback = false,
+                        lsp_fallback = true,
                     })
                 end,
             },

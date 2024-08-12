@@ -9,9 +9,9 @@ if [ -z $desired_session ]; then
     session_name=$(basename $result)
 
     if [ -z $TMUX ]; then # Not in TMUX
-        tmux new-session -c $result -s $session_name nvim $result/0.\ Mocs/Home.md
+        tmux new-session -c $result -s $session_name nvim $result/0-mocs/home.md
     else
-        tmux new-session -d -c $result -s $session_name nvim $result/0.\ Mocs/Home.md
+        tmux new-session -d -c $result -s $session_name nvim $result/0-mocs/home.md
         tmux switch-client -t $session_name
     fi
 else

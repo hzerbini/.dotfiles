@@ -33,7 +33,7 @@ return {
             },
             {
                 name = "APC",
-                path = "~/pCloudDrive/SecondBrain/2. Areas/APC/",
+                path = "~/pCloudDrive/SecondBrain/2-areas/apc/",
                 strict = true,
             },
             -- {
@@ -51,7 +51,7 @@ return {
         -- dir = "~/vaults/work",
 
         -- Optional, if you keep notes in a specific subdirectory of your vault.
-        notes_subdir = "3. Notes",
+        notes_subdir = "3-notes",
 
         -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
         -- levels defined by "vim.log.levels.*".
@@ -59,7 +59,7 @@ return {
 
         daily_notes = {
             -- Optional, if you keep daily notes in a separate directory.
-            folder = "+ Daily",
+            folder = "+daily",
             -- Optional, if you want to change the date format for the ID of daily notes.
             date_format = "%Y-%m-%d",
             -- Optional, if you want to change the date format of the default alias of daily notes.
@@ -102,25 +102,25 @@ return {
             ["<leader>odd"] = {
                 action = "<cmd>ObsidianDailies<cr>",
                 desc = "Create/Open a daily note",
-                opts = { buffer = true },
+                -- opts = { buffer = true },
             },
 
             ["<leader>odt"] = {
                 action = "<cmd>ObsidianToday<cr>",
                 desc = "Create/Open today daily note",
-                opts = { buffer = true },
+                -- opts = { buffer = true },
             },
 
             ["<leader>on"] = {
                 action = "<cmd>ObsidianNewFromTemplate<cr>",
                 desc = "Create new note",
-                opts = { buffer = true },
+                -- opts = { buffer = true },
             },
 
             ["<leader>of"] = {
                 action = "<cmd>ObsidianSearch<cr>",
                 desc = "Find obsidian note",
-                opts = { buffer = true },
+                -- opts = { buffer = true },
             },
 
             ["<leader>op"] = {
@@ -131,20 +131,18 @@ return {
             ["<leader>ow"] = {
                 action = "<cmd>ObsidianWorkspace<cr>",
                 desc = "Change obsidian workspace",
-                opts = { buffer = true },
-            },
-            ["<leader>oww"] = {
-                action = function()
-                    local obsidian = require("obsidian")
-                end,
-                desc = "Change obsidian workspace",
-                opts = { buffer = true },
+                -- opts = { buffer = true },
             },
             ["<leader>oT"] = {
                 action = "<cmd>ObsidianTemplate<cr>",
                 desc = "Change obsidian workspace",
                 opts = { buffer = true },
             },
+            -- ["<leader>oln"] = {
+            --     action = ":ObsidianLinkNew<cr>",
+            --     desc = "Create new link selected by visual mode.",
+            --     opts = { buffer = true, mode = "v" },
+            -- },
             -- Smart action depending on context, either follow link or toggle checkbox.
             -- ["<cr>"] = {
             --     action = function()
@@ -218,8 +216,8 @@ return {
                 note:add_alias(note.title)
             end
 
-            if note.date == nil then
-                note.date = os.date("%Y-%m-%d")
+            if note.noteDate == nil then
+                note.noteDate = os.date("%Y-%m-%d")
             end
 
             local out = {
@@ -228,6 +226,29 @@ return {
                 tags = note.tags,
                 date = note.date,
             }
+
+            for _, tag in ipairs(note.tags) do
+                if tag == "human" then
+                    out.birthdate = "yyyy-mm-dd"
+                    out.deathdate = "yyyy-mm-dd"
+                    out.birthplace = "---"
+                    out.languages = { "---" }
+                    out.relationships = { "---" }
+                end
+
+                if tag == "artwork" or tag == "quote" then
+                    out.year = "yyyy"
+                    out.author = "--- (relation)"
+                end
+
+                if tag == "cheatsheet" then
+                    out.of = "---"
+                end
+
+                if tag == "city" then
+                    out.country = "---"
+                end
+            end
 
             -- `note.metadata` contains any manually added fields in the frontmatter.
             -- So here we just make sure those fields are kept in the frontmatter.
@@ -242,7 +263,7 @@ return {
 
         -- Optional, for templates (see below).
         templates = {
-            folder = "4. Templates",
+            folder = "4-templates",
             date_format = "%Y-%m-%d",
             time_format = "%H:%M",
             -- A map for custom variables, the key should be the variable and the value a function
@@ -388,7 +409,7 @@ return {
             -- The default folder to place images in via `:ObsidianPasteImg`.
             -- If this is a relative path it will be interpreted as relative to the vault root.
             -- You can always override this per image by passing a full path to the command instead of just a filename.
-            img_folder = "5. Assets/Images", -- This is the default
+            img_folder = "5-assets/images", -- This is the default
 
             -- Optional, customize the default name or prefix when pasting images via `:ObsidianPasteImg`.
             ---@return string
