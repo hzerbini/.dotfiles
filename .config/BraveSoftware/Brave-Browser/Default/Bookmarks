@@ -1,0 +1,102 @@
+{
+   "checksum": "c07920043f897889eb115aeab88d9c58",
+   "roots": {
+      "bookmark_bar": {
+         "children": [ {
+            "date_added": "13339783041937209",
+            "date_last_used": "13368459407615241",
+            "guid": "a6f8954a-7559-4fcb-9c7f-ae28bbe6c328",
+            "id": "18",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "GradedReaders",
+            "type": "url",
+            "url": "https://english-e-reader.net/book/gelert-a-legend-from-wales"
+         }, {
+            "date_added": "13368458878033086",
+            "date_last_used": "0",
+            "guid": "5b65caaf-ec8d-4724-8e91-e5bbd653f682",
+            "id": "45",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Cambridge Dictionary",
+            "type": "url",
+            "url": "https://dictionary.cambridge.org/"
+         } ],
+         "date_added": "13337091791164938",
+         "date_last_used": "0",
+         "date_modified": "13368458887279338",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13367888757008620",
+            "date_last_used": "13368459436135916",
+            "guid": "2ab17eb6-edac-4ca7-9f4f-467a7293bd04",
+            "id": "43",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Bash keyboard shortcuts",
+            "type": "url",
+            "url": "https://gist.github.com/tuxfight3r/60051ac67c5f0445efee"
+         }, {
+            "date_added": "13367861244298862",
+            "date_last_used": "13368459993447977",
+            "guid": "3034d6d2-6ebf-4d34-b086-2571403c43ba",
+            "id": "42",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Zathura Keyboard Shortcuts",
+            "type": "url",
+            "url": "https://www.maketecheasier.com/cheatsheet/zathura-keyboard-shortcuts/"
+         }, {
+            "date_added": "13368462530492435",
+            "date_last_used": "0",
+            "guid": "74c2f9dc-5af1-4b95-bf74-6162e972f1ea",
+            "id": "46",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Excalidraw | Hand-drawn look & feel • Collaborative • Secure",
+            "type": "url",
+            "url": "https://excalidraw.com/"
+         }, {
+            "date_added": "13368463127389747",
+            "date_last_used": "0",
+            "guid": "77955da1-0391-4c08-bf48-a7ab75c664ba",
+            "id": "47",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "ChatGPT",
+            "type": "url",
+            "url": "https://chatgpt.com/"
+         } ],
+         "date_added": "13337091791164941",
+         "date_last_used": "0",
+         "date_modified": "13368463127389747",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13337091791164943",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
