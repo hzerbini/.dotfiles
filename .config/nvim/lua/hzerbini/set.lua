@@ -18,8 +18,11 @@ vim.opt.backup = false
 vim.opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 vim.opt.undofile = true
 
+-- Search
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
@@ -35,4 +38,4 @@ vim.opt.spelllang = "en_us,pt_br"
 vim.opt.spell = true
 
 -- Obsidian
-vim.opt.conceallevel = 1
+vim.opt.conceallevel = 2
