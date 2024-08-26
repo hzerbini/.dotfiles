@@ -1,5 +1,5 @@
 {
-   "checksum": "f97c2e61e9f3ff577731544cc7b14351",
+   "checksum": "21958cca29ac17723ce0677757244bba",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -68,10 +68,21 @@
             "name": "Oracle Database SQL Language Reference",
             "type": "url",
             "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/"
+         }, {
+            "date_added": "13368719255528356",
+            "date_last_used": "0",
+            "guid": "f487229e-4e08-4fbe-bea2-289039b424d1",
+            "id": "55",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Tailwind CSS Docs",
+            "type": "url",
+            "url": "https://tailwindcss.com/docs/installation"
          } ],
          "date_added": "13337091791164938",
          "date_last_used": "0",
-         "date_modified": "13368545017071388",
+         "date_modified": "13368719267543815",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks",
@@ -125,7 +136,7 @@
          } ],
          "date_added": "13337091791164941",
          "date_last_used": "0",
-         "date_modified": "13368542831501499",
+         "date_modified": "13368719255528356",
          "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
          "id": "2",
          "name": "Other bookmarks",
