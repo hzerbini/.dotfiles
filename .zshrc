@@ -102,6 +102,7 @@ alias vimbegood='docker run -it --rm brandoncc/vim-be-good:latest'
 #alias node='docker run -v $PWD:/var/www -it --workdir /var/www node:lts'
 #alias npm='docker run -v $PWD:/var/www -it --workdir /var/www --entrypoint npm node:lts'
 alias vim='nvim'
+alias sail='sh $([ -f sail ] && echo sail || echo vendor/bin/sail)'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 

@@ -99,6 +99,7 @@ return {
                 highlight = {
                     -- `false` will disable the whole extension
                     enable = true,
+                    disable = { "sql" },
 
                     -- setting this to true will run `:h syntax` and tree-sitter at the same time.
                     -- set this to `true` if you depend on 'syntax' being enabled (like for indentation).
