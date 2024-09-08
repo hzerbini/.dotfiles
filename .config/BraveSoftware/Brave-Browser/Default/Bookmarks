@@ -1,5 +1,5 @@
 {
-   "checksum": "21958cca29ac17723ce0677757244bba",
+   "checksum": "2f1f9b342385e6c514c3fd59d8074b78",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -70,7 +70,7 @@
             "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/sqlrf/"
          }, {
             "date_added": "13368719255528356",
-            "date_last_used": "0",
+            "date_last_used": "13369864041354459",
             "guid": "f487229e-4e08-4fbe-bea2-289039b424d1",
             "id": "55",
             "meta_info": {
@@ -79,10 +79,21 @@
             "name": "Tailwind CSS Docs",
             "type": "url",
             "url": "https://tailwindcss.com/docs/installation"
+         }, {
+            "date_added": "13369926018665223",
+            "date_last_used": "0",
+            "guid": "062a7000-e51e-45b9-9e14-e0e6aa5a92e9",
+            "id": "57",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Oracle Database Packages",
+            "type": "url",
+            "url": "https://docs.oracle.com/en/database/oracle/oracle-database/23/arpls/DBMS_CLOUD.html#GUID-9428EA51-5DDD-43C2-B1F5-CD348C156122"
          } ],
          "date_added": "13337091791164938",
          "date_last_used": "0",
-         "date_modified": "13368719267543815",
+         "date_modified": "13369926018665223",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks",

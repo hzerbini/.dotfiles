@@ -128,6 +128,6 @@ return {
         },
         { "<leader>Dr", ":lua require('dap').repl.toggle()<CR>" },
         { "<leader>Du", ":lua require('dapui').toggle()<CR>" },
-        { "<leader>Dt", ":lua require('dap-go').debug_test", ft = "go" },
+        { "<leader>Dt", ":lua require('dap-go').debug_test()<CR>", ft = "go" },
     },
 }
