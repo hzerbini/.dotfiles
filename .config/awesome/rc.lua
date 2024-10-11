@@ -814,7 +814,14 @@ awful.rules.rules = {
 	},
 	{
 		rule_any = {
-			class = { "KeePassXC", "beekeeper-studio", "Studio 3T", "Gimp-2.10", "figma-linux" },
+			class = {
+				"Gimp-2.10",
+				"KeePassXC",
+				"Studio 3T",
+				"beekeeper-studio",
+				"bruno",
+				"figma-linux",
+			},
 		},
 		properties = { tag = "3", focus = true, switchtotag = true },
 	},
