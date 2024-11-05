@@ -27,6 +27,7 @@ return {
                     "tailwindcss",
                     "tsserver",
                     "yamlls",
+                    "volar",
                 },
             })
         end,

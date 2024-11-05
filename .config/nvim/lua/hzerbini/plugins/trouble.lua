@@ -8,7 +8,6 @@ return {
             position = "bottom", -- position of the list can be: bottom, top, left, right
             height = 10, -- height of the trouble list when position is top or bottom
             width = 50, -- width of the list when position is left or right
-            icons = true, -- use devicons for filenames
             mode = "workspace_diagnostics", -- "workspace_diagnostics", "document_diagnostics", "quickfix", "lsp_references", "loclist"
             verity = nil, -- nil (ALL) or vim.diagnostic.severity.ERROR | WARN | INFO | HINT
             fold_open = "", -- icon used for open folds
@@ -69,11 +68,15 @@ return {
             end,
             buffer = 0,
         },
-        { "<leader>xx", "<cmd>Trouble diagnostics toggle<cr>", silent = true, noremap = true },
-        { "<leader>xl", "<cmd>Trouble lsp toggle<cr>", silent = true, noremap = true },
+        {
+            "<leader>xx",
+            "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+            silent = true,
+            noremap = true,
+        },
         {
             "<leader>xw",
-            "<cmd>Trouble workspace_diagnostics toggle<cr>",
+            "<cmd>Trouble diagnostics toggle<cr>",
             silent = true,
             noremap = true,
         },
@@ -84,6 +87,6 @@ return {
             noremap = true,
         },
         { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", silent = true, noremap = true },
-        { "<leader>xq", "<cmd>Trouble quickfix toggle<cr>", silent = true, noremap = true },
+        { "<leader>xq", "<cmd>Trouble qflist toggle<cr>", silent = true, noremap = true },
     },
 }
