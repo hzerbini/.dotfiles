@@ -18,6 +18,6 @@ require("lspconfig").emmet_ls.setup({
         "svelte",
         "typescript",
         "typescriptreact",
-        "vue",
+        -- "vue",
     },
 })

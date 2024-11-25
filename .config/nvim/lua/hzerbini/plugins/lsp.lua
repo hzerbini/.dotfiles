@@ -171,7 +171,7 @@ return {
                 virtual_text = true,
             })
 
-            vim.lsp.set_log_level("warn")
+            vim.lsp.set_log_level("debug")
             require("hzerbini.lsp")
         end,
     },
