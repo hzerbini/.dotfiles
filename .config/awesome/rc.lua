@@ -454,8 +454,6 @@ globalkeys = gears.table.join(
 				awful.util.spawn("brave")
 			elseif key == "c" then
 				awful.spawn.raise_or_spawn("discord")
-			elseif key == "d" then
-				awful.spawn.raise_or_spawn("beekeeper-studio")
 			elseif key == "e" then
 				awful.spawn.raise_or_spawn("thunderbird")
 			elseif key == "t" then
@@ -808,7 +806,7 @@ awful.rules.rules = {
 	},
 	{
 		rule_any = {
-			class = { "thunderbird", "discord", "ClickUp" },
+			class = { "thunderbird", "discord", "ClickUp", "Slack" },
 		},
 		properties = { tag = "5", focus = true, switchtotag = true },
 	},
@@ -821,6 +819,7 @@ awful.rules.rules = {
 				"beekeeper-studio",
 				"bruno",
 				"figma-linux",
+                "jetbrains-datagrip",
 			},
 		},
 		properties = { tag = "3", focus = true, switchtotag = true },

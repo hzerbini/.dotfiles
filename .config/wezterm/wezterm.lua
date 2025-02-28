@@ -3,7 +3,7 @@ local keys = require("./keys")
 local config = {}
 
 config.font = wezterm.font("JetBrains Mono")
-config.font_size = 10.0
+config.font_size = 9.0
 config.color_scheme = "nord"
 config.window_padding = {
 	left = 0,
