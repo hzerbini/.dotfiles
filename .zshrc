@@ -140,5 +140,5 @@ PATH="/opt/flutter/bin:$HOME/.local/bin:$HOME/.pub-cache/bin:$PATH"
 alias config='/usr/bin/git --git-dir=/home/zerbini/.dotfiles/ --work-tree=/home/zerbini'
 
 export EDITOR='nvim'
-export PATH=/home/zerbini/Scripts:$PATH
+export PATH=$HOME/.config/composer/vendor/bin:$HOME/Scripts:$PATH
 eval "$(zoxide init zsh)"
