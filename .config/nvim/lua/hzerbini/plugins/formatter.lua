@@ -27,25 +27,25 @@ return {
                     yaml = { "prettier" },
                     yamlreact = { "prettier" },
                 },
-                format_on_save = function(bufnr)
-                    if slow_format_filetypes[vim.bo[bufnr].filetype] then
-                        return
-                    end
-                    local function on_format(err)
-                        if err and err:match("timeout$") then
-                            slow_format_filetypes[vim.bo[bufnr].filetype] = true
-                        end
-                    end
-
-                    return { timeout_ms = 200, lsp_fallback = false }, on_format
-                end,
-
-                format_after_save = function(bufnr)
-                    if not slow_format_filetypes[vim.bo[bufnr].filetype] then
-                        return
-                    end
-                    return { lsp_fallback = true }
-                end,
+                -- format_on_save = function(bufnr)
+                --     if slow_format_filetypes[vim.bo[bufnr].filetype] then
+                --         return
+                --     end
+                --     local function on_format(err)
+                --         if err and err:match("timeout$") then
+                --             slow_format_filetypes[vim.bo[bufnr].filetype] = true
+                --         end
+                --     end
+                --
+                --     return { timeout_ms = 200, lsp_fallback = false }, on_format
+                -- end,
+                --
+                -- format_after_save = function(bufnr)
+                --     if not slow_format_filetypes[vim.bo[bufnr].filetype] then
+                --         return
+                --     end
+                --     return { lsp_fallback = true }
+                -- end,
                 log_level = vim.log.levels.TRACE,
                 notify_on_error = true,
                 formatters = {
@@ -89,6 +89,7 @@ return {
                 function()
                     require("conform").format({
                         lsp_fallback = true,
+                        async = true,
                     })
                 end,
             },

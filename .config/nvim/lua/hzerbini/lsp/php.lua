@@ -4,6 +4,9 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 require("lspconfig").intelephense.setup({
 	capabilities = capabilities,
+    init_options = {
+        licenceKey = vim.fn.expand('$HOME') .. '/pCloudDrive/Personal/intelephense-key.txt',
+    },
 	settings = {
 		intelephense = {
 			stubs = {
@@ -62,6 +65,9 @@ require("lspconfig").intelephense.setup({
 					"/home/zerbini/.config/composer/vendor/php-stubs/",
 					"/home/zerbini/.config/composer/vendor/wpsyntex/",
 				},
+                excludePaths = {
+                    "vendor/cmixin/business-day/types/**"
+                },
 			},
 			files = {
 				maxSize = 5000000,

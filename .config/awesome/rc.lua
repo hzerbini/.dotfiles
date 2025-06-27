@@ -504,7 +504,7 @@ globalkeys = gears.table.join(
 					"rofi -show calc -modi calc -no-show-match -no-sort -calc-command \"echo -n '{result}' | xclip\""
 				)
 			elseif key == "e" then
-				awful.util.spawn("rofi -modi emoji -show emoji -kb-custom-1 Ctrl+c")
+				awful.util.spawn("rofi -modi emoji -show emoji")
 			elseif key == "x" then
 				awful.util.spawn("colorpicker --short --one-shot | xclip -selection clipboard")
 			end
