@@ -20,7 +20,7 @@ return {
     },
 
     opts = function()
-        local templates = require("plugins.obsidian.templates")
+        local templates = require("hzerbini.plugins.obsidian.templates")
 
         return {
             -- A list of workspace names, paths, and configuration overrides.
@@ -212,34 +212,31 @@ return {
             disable_frontmatter = false,
 
             -- Optional, alternatively you can customize the frontmatter data.
+            ---@param note obsidian.Note
             ---@return table
             note_frontmatter_func = function(note)
                 if note.title then
                     note:add_alias(note.title)
                 end
 
-                if note.noteDate == nil then
-                    note.noteDate = os.date("%Y-%m-%d")
-                end
-
                 local out = {
                     id = note.id,
                     aliases = note.aliases,
                     tags = note.tags,
-                    date = note.date,
+                    date = os.date("%Y-%m-%d"),
                 }
-
-                -- Aplica os campos com base nas tags
-                local extra_fields = templates.get_fields_by_tags(note.tags)
-                for k, v in pairs(extra_fields) do
-                    out[k] = v
-                end
 
                 -- Preserva campos já existentes
                 if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
                     for k, v in pairs(note.metadata) do
                         out[k] = v
                     end
+                end
+
+                -- Aplica os campos com base nas tags
+                local extra_fields = templates.get_fields_by_tags(note.tags)
+                for k, v in pairs(extra_fields) do
+                    out[k] = v
                 end
 
                 return out

@@ -4,23 +4,23 @@ M.templates = {
     person = {
         birthdate = "YYYY-MM-DD",
         deathdate = "YYYY-MM-DD",
-        birthplace = "---",
-        languages = { "---" },
-        relationships = { "---" },
+        birthplace = "",
+        languages = "",
+        relationships = "",
     },
     artwork = {
         year = "YYYY",
-        author = "--- (relation)",
+        author = nil,
     },
     quote = {
         year = "YYYY",
-        author = "--- (relation)",
+        author = nil,
     },
     cheatsheet = {
-        of = "---",
+        of = nil,
     },
     city = {
-        country = "---",
+        country = nil,
     },
 }
 
