@@ -6,10 +6,11 @@ return {
             library = {
                 -- always load the LazyVim library
                 "LazyVim",
+                { path = "${3rd}/luv/library", words = { "vim%.uv" } },
+                { path = "wezterm-types", mods = { "wezterm" } },
             },
             -- Load the wezterm types when the `wezterm` module is required
             -- Needs `justinsgithub/wezterm-types` to be installed
-            { path = "wezterm-types", mods = { "wezterm" } },
         },
     },
     {
