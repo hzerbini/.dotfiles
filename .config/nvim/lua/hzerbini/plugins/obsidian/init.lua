@@ -389,6 +389,12 @@ return {
                     return string.format("![%s](%s)", path.name, path)
                 end,
             },
+
+            templates = {
+                folder = "4-templates",
+                date_format = "%Y-%m-%d-%a",
+                time_format = "%H:%M",
+            },
         }
     end,
 }
