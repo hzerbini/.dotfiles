@@ -1,26 +1,112 @@
 local M = {}
 
 M.templates = {
-    person = {
+    ["type/person"] = {
         birthdate = "YYYY-MM-DD",
         deathdate = "YYYY-MM-DD",
-        birthplace = "",
-        languages = "",
-        relationships = "",
+        birth_place = "---",
+        death_place = "---",
+        nationality = "---",
+        occupation = {"---"},
+        known_for = {"---"},
+        associated_with = {"---"},
+        languages = {"---"},
+        fictional = false,
+        gender = "male",
+        image = "https://",
+        description = "https://",
     },
-    artwork = {
+    ["type/manga"] = {
+        author = "---",
+        genres= {"---", "---"},
+        demographic = "---",
+        status = "#status/plan-to-read",
+        chapters_read = 0,
+        volumes_read = 0,
+        start_date = "YYYY-MM-DD",
+        end_date = "YYYY-MM-DD",
+        serialization = "---",
+        publisher = "---",
+        rating = 10,
+        language = "japanese",
+        cover_image = "---",
+        mal_id = 13,
+        mal_url = "https://",
+        description = "---",
+    },
+    ["type/course"] = {
+        of = "---",
+        name = "---",
+        author = "---",
+        my_rating = 10,
+        image = "---",
+    },
+    ["type/chapter"] = {
+        of = "---",
+        name = "---",
+        number = 3,
+        my_rating = 10,
+        image = "---",
+        places = { "---" , "---"},
+    },
+    ["type/artwork"] = {
         year = "YYYY",
-        author = nil,
+        author = "---",
+        current_location = "---",
+        painted_where = "---",
+        image = "---",
     },
-    quote = {
-        year = "YYYY",
-        author = nil,
+    ["type/continent"] = {
+        image = "---",
+        map_image = "---",
     },
-    cheatsheet = {
-        of = nil,
+    ["type/city"] = {
+        country = "---",
+        state = "---",
+        population = 1111,
+        area_km2 = 11111,
+        known_for = {"---", "---"},
+        flag = "---",
+        image = "---",
+        map_image = "---",
+        founded = "YYYY-MM-DD"
     },
-    city = {
-        country = nil,
+    ["type/state"] = {
+        country = "---",
+        flag = "---",
+        image = "---",
+        map_image = "---",
+        founded = "YYYY-MM-DD"
+    },
+    ["type/country"] = {
+        languages = {"---"},
+        president = "---",
+        capital = "---",
+        continent = "---",
+        population = 100,
+        area_km2 = 100,
+        currency = "---",
+        government_type = "---",
+        flag = "---",
+        image = "---",
+        map_image = "---",
+        founded = "YYYY-MM-DD",
+    },
+    ["type/location"] = {
+        location_type = "# e.g., city, park, mountain, landmark, region, building, neighborhood, river",
+        country = "---",
+        state = "---",
+        city = "---",
+        coordinates = {
+            lat = 36.1666,
+            lon = -111,
+        },
+        description = "---",
+        image = "---",
+        map_image = "---",
+    },
+    ["attribute/ficticional"] = {
+        fictional = true,
     },
 }
 

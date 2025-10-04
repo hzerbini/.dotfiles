@@ -56,6 +56,14 @@ return {
             -- Optional, if you keep notes in a specific subdirectory of your vault.
             notes_subdir = "3-notes",
 
+            templates = {
+                folder = "4-templates",
+                date_format = "%Y-%m-%d",
+                time_format = "%H:%M",
+                -- A map for custom variables, the key should be the variable and the value a function
+                substitutions = {},
+            },
+
             -- Optional, set the log level for obsidian.nvim. This is an integer corresponding to one of the log
             -- levels defined by "vim.log.levels.*".
             log_level = vim.log.levels.INFO,
@@ -226,17 +234,17 @@ return {
                     date = os.date("%Y-%m-%d"),
                 }
 
+                -- Aplica os campos com base nas tags
+                local extra_fields = templates.get_fields_by_tags(note.tags)
+                for k, v in pairs(extra_fields) do
+                    out[k] = v
+                end
+                --
                 -- Preserva campos já existentes
                 if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
                     for k, v in pairs(note.metadata) do
                         out[k] = v
                     end
-                end
-
-                -- Aplica os campos com base nas tags
-                local extra_fields = templates.get_fields_by_tags(note.tags)
-                for k, v in pairs(extra_fields) do
-                    out[k] = v
                 end
 
                 return out
