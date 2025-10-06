@@ -33,6 +33,7 @@ require("lspconfig").intelephense.setup({
 				"password",
 				"pcntl",
 				"pcre",
+                "spl",
 				"PDO",
 				"pdo_mysql",
 				"Phar",
@@ -52,23 +53,23 @@ require("lspconfig").intelephense.setup({
 				"yaml",
 				"zip",
 				"zlib",
-				"wordpress-stubs",
-				"woocommerce-stubs",
-				"acf-pro-stubs",
-				"wordpress-globals",
-				"wp-cli-stubs",
-				"genesis-stubs",
-				"polylang-stubs",
+				-- "wordpress-stubs",
+				-- "woocommerce-stubs",
+				-- "acf-pro-stubs",
+				-- "wordpress-globals",
+				-- "wp-cli-stubs",
+				-- "genesis-stubs",
+				-- "polylang-stubs",
 			},
-			environment = {
-				includePaths = {
-					"/home/zerbini/.config/composer/vendor/php-stubs/",
-					"/home/zerbini/.config/composer/vendor/wpsyntex/",
-				},
-                excludePaths = {
-                    "vendor/cmixin/business-day/types/**"
-                },
-			},
+			-- environment = {
+				-- includePaths = {
+				-- 	"/home/zerbini/.config/composer/vendor/php-stubs/",
+				-- 	"/home/zerbini/.config/composer/vendor/wpsyntex/",
+				-- },
+                -- excludePaths = {
+                --     "vendor/cmixin/business-day/types/**"
+                -- },
+			-- },
 			files = {
 				maxSize = 5000000,
 			},
