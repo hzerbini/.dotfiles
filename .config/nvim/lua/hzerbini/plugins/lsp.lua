@@ -62,7 +62,6 @@ return {
             "jcha0713/cmp-tw2css",
             "onsails/lspkind.nvim",
             "saadparwaiz1/cmp_luasnip",
-            "kristijanhusak/vim-dadbod-completion",
         },
         -- lazy = false,
         event = "BufEnter",
@@ -100,7 +99,6 @@ return {
                     { name = "nvim_lsp" },
                     { name = "path" },
                     { name = "luasnip" }, -- For luasnip users.
-                    { name = "vim-dadbod-completion" },
                     { name = "cmp-tw2css" },
                     { name = "buffer", keyword_length = 5 },
                     {
@@ -172,7 +170,7 @@ return {
                 virtual_text = true,
             })
 
-            vim.lsp.set_log_level("debug")
+            -- vim.lsp.set_log_level("debug")
             require("hzerbini.lsp")
         end,
     },

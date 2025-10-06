@@ -24,5 +24,11 @@
 -- parse = function() return require("luasnip.util.parser").parse_snippet end,
 -- ms = function() return require("luasnip.nodes.multiSnippet").new_multisnippet end,
 return {
-	s("exemplo", t("este é apenas um exemplo de snippet")),
+    s(
+        "curtime",
+        f(function()
+            return os.date "%D - %H:%M"
+        end)
+    ),
+    s("exemplo", t("este é apenas um exemplo de snippet")),
 }

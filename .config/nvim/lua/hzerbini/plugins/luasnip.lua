@@ -60,5 +60,10 @@ return {
             end,
             silent = true,
         },
+        {
+            mode = { "n"},
+            "<leader><leader>s",
+            "<cmd>source ~/.config/nvim/lua/hzerbini/plugins/luasnip.lua<CR>"
+        },
     },
 }

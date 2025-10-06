@@ -57,14 +57,14 @@ return {
         {
             "[d",
             function()
-                vim.diagnostic.goto_prev()
+                vim.diagnostic.get_prev();
             end,
             buffer = 0,
         },
         {
             "]d",
             function()
-                vim.diagnostic.goto_next()
+                vim.diagnostic.get_next();
             end,
             buffer = 0,
         },
@@ -81,10 +81,17 @@ return {
             noremap = true,
         },
         {
-            "<leader>xd",
-            "<cmd>Trouble document_diagnostics toggle<cr>",
+            "<leader>xL",
+            "<cmd>Trouble lsp toggle focus=false win.position=right<cr>",
             silent = true,
             noremap = true,
+        },
+        {
+          "<leader>xs",
+          "<cmd>Trouble symbols toggle focus=false<cr>",
+          desc = "Symbols (Trouble)",
+          silent = true,
+          noremap = true,
         },
         { "<leader>xl", "<cmd>Trouble loclist toggle<cr>", silent = true, noremap = true },
         { "<leader>xq", "<cmd>Trouble qflist toggle<cr>", silent = true, noremap = true },
