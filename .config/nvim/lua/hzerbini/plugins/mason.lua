@@ -27,8 +27,8 @@ return {
                     "tailwindcss",
                     "ts_ls",
                     "yamlls",
-                    "vue_ls",
-                    "vtsls",
+                    -- "vue_ls",
+                    -- "vtsls",
                     "prismals",
                 },
             })

@@ -1,5 +1,6 @@
 -- The nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
-local vue_language_server_path = vim.fn.stdpath('data') .. "/mason/bin/vue-language-server"
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
+local vue_language_server_path = vim.fn.stdpath('data') .. "/mason/packages/vue-language-server"
 local tsserver_filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' }
 local vue_plugin = {
   name = '@vue/typescript-plugin',
@@ -8,6 +9,7 @@ local vue_plugin = {
   configNamespace = 'typescript',
 }
 local vtsls_config = {
+  capabilities = capabilities,
   settings = {
     vtsls = {
       tsserver = {
@@ -21,6 +23,7 @@ local vtsls_config = {
 }
 
 local vue_ls_config = {
+  capabilities = capabilities,
 }
 -- nvim 0.11 or above
 vim.lsp.config('vtsls', vtsls_config)

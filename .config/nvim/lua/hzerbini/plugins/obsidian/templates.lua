@@ -34,6 +34,19 @@ M.templates = {
         mal_url = "https://",
         description = "---",
     },
+    ["type/podcast"] = {
+        author = "---",
+        genres= {"---", "---"},
+        demographic = "---",
+        status = "#status/plan-to-listen",
+        episodes_listened = 0,
+        start_date = "YYYY-MM-DD",
+        end_date = "YYYY-MM-DD",
+        rating = 10,
+        language = "english",
+        cover_image = "---",
+        description = "---",
+    },
     ["type/course"] = {
         of = "---",
         name = "---",
@@ -48,6 +61,13 @@ M.templates = {
         my_rating = 10,
         image = "---",
         places = { "---" , "---"},
+    },
+    ["type/episode"] = {
+        of = "---",
+        name = "---",
+        number = 3,
+        my_rating = 10,
+        image = "---",
     },
     ["type/artwork"] = {
         year = "YYYY",
@@ -107,6 +127,9 @@ M.templates = {
     },
     ["attribute/ficticional"] = {
         fictional = true,
+    },
+    ["attribute/mnemonic"] = {
+        mnemonic = "---",
     },
 }
 
